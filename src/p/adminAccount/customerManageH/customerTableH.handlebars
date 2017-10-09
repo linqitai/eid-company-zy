@@ -1,0 +1,40 @@
+<thead class="text-c">
+    <tr>
+        <th>客户名称</th>
+        <th>客户类型</th>
+        <th>接口</th>
+        <th>联系人</th>
+        <th>联系电话</th>
+        <th>剩余金额</th>
+        <th>地址</th>
+        <th>状态</th>
+        <th>设备数量</th>
+        <th>操作</th>
+    </tr>
+</thead>
+<tbody class="text-c">
+    {{#if this}} {{#each this}}
+    <tr>
+        <td>{{companyName}}</td>
+        <td>{{typeName}}</td>
+        <td>
+            {{#ifCond isNeedCall "==" '0'}}
+            <span class="c-green">不需要</span> {{/ifCond}} {{#ifCond isNeedCall "==" '1'}}
+            <span class="c-blue">需要</span> {{/ifCond}}
+        </td>
+        <td>{{linkMan}}</td>
+        <td>{{phone}}</td>
+        <td>{{formatMoney remainAmount}}</td>
+        <td>{{province}}{{city}}{{address}}</td>
+        {{#ifCond status "==" 0}}
+        <td class="c-red">禁用</td>{{else}}
+        <td class="c-green">启用</td>{{/ifCond}}
+        <td>{{deviceCount}}</td>
+        <td><a href="/company/customerDetail.htm?companyId={{companyId}}" class="detailInfor">详情</a></td>
+    </tr>
+    {{/each}} {{else}}
+    <tr>
+        <td class="text-c" colspan="8">查无数据</td>
+    </tr>
+    {{/if}}
+</tbody>

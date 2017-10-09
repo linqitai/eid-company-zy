@@ -1,0 +1,331 @@
+<div id="modal-checkInfo" class="modal fade myModal" style="margin-left: -535px;position:fixed;width:1200px;">
+    <div class="modal-dialog">
+        <div class="modal-content radius">
+            <div class="modalHeader">
+                {{!--<span class="modal-title ml20">人证核实信息</span>--}}
+                <div class="header">
+                    <span class="tab1 current">人脸对比结果</span>
+                    <span class="tab2">授权书上传</span>
+                    <span class="tab3">手机号校验授权</span>
+                </div>
+                <a class="close mr5 pull-right" id="closeBtn" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+            </div>
+            <div class="modalBody modal1" data-result="{{result}}">
+                {{!-- {{#ifCond mobileStatus "==" "1"}}
+                <div class="orangeTip" id="orangeTip">温馨提示：重新查询需重新收费~</div>
+                {{/ifCond}} --}}
+                <!--result==0?"人脸比对成功":"人脸比对失败";-->
+                 {{#ifCond result "!=" 0}}
+                    {{#ifCond flowStatus "<" '20'}}
+                    <img class="ani" class="idtySuccess" src="http://static.hpbanking.com/xg/uploads/files/5ee0ca886ef076cde7a0ab5bc917e945-100-90.png" alt="" style="position: absolute;right:20%;top:1%;">
+                   {{/ifCond}}
+                   {{#ifCond flowStatus ">=" 20}}
+                        <img class="ani" class="idtySuccess" src="http://static.hpbanking.com/xg/uploads/files/1740c91f0e8e8693b11fdae912208f6a-100-90.png" alt=""style="position: absolute;right:20%;top:1%;">
+                   {{/ifCond}}
+                {{/ifCond}} 
+                 
+                {{#ifCond result "==" 0}}
+                    <img class="ani" class="idtySuccess" src="http://static.hpbanking.com/xg/uploads/files/4aac038d56ea2090a5e8d3cadd88c64c-100-90.png" alt=""style="position: absolute;right:20%;top:1%;">
+                    
+                 {{/ifCond}}
+                  {{!-- {{#ifCond source "==" '1'}}
+                  <div class="pull-left identitiesBox">
+                    <div class="identity identityFront pull-left">
+                        <div class="pull-left w170 clearfix">
+                            <div class="lineBox">
+                                <span class="lightblue">姓名</span><span class="addText">{{borrowerName}}</span>
+                            </div>
+                            <div class="lineBox">
+                                <span class="lightblue">性别</span><span class="addText">{{infoSex sex}}</span><span class="ml-15 lightblue">民族</span>
+                                <span class="addText">{{nation}}</span>
+                            </div>
+                            <div class="lineBox">
+                                <span class="lightblue">出生</span><span class="addText">{{birthdate}}</span>
+                            </div>
+                            <div class="lineBox" style="height:14px;line-height:14px !important;">
+                                <span class="lightblue">住址</span><span class="addText">{{address}}</span>
+                            </div>
+                        </div>
+                        <div class="pull-right w80 mr-10">
+                            <img src="{{imgUrl}}" class="frontPic">
+                        </div>
+                        <div class="lineBox clearfix" style="position: absolute;bottom: 20px;">
+                            <span class="lightblue">公民身份证号码</span><span class="addText">{{cardNum}}</span>
+                        </div>
+                    </div>
+                    <div class="identity identityBack pull-left ml29">
+                        <div class="lineBox pdl20 mt100">
+                            <span class="">签发机关</span><span class="addText">{{issuer}}</span>
+                        </div>
+                        <div class="lineBox pdl20">
+                            <span class="">有效期限</span><span class="addText">{{transform validDate}}</span>
+                        </div>
+                    </div>
+                    <div class="currentPic pull-left ml29">
+                        <img src="{{faceUrl}}" width="186">
+                        <img id="frame" src="http://static.hpbanking.com/xg/uploads/files/28fd24d40a6d325f3cb7085b7f37ef41-140-140.png">
+                        <div id="scanline"></div>
+                    </div>
+                </div>
+                   {{/ifCond}} 
+                    {{#ifCond source "!=" '1'}}--}}
+                        
+                    {{#ifCond frontImage "==" ''}}
+                <div class="pull-left identitiesBox">
+                    <div class="identity identityFront pull-left">
+                        <div class="pull-left w170 clearfix">
+                            <div class="lineBox">
+                                <span class="lightblue">姓名</span><span class="addText">{{borrowerName}}</span>
+                            </div>
+                            <div class="lineBox">
+                                <span class="lightblue">性别</span><span class="addText">{{infoSex sex}}</span><span class="ml-15 lightblue">民族</span>
+                                <span class="addText">{{nation}}</span>
+                            </div>
+                            <div class="lineBox">
+                                <span class="lightblue">出生</span><span class="addText">{{birthdate}}</span>
+                            </div>
+                            <div class="lineBox" style="height:14px;line-height:14px !important;">
+                                <span class="lightblue">住址</span><span class="addText">{{address}}</span>
+                            </div>
+                        </div>
+                        <div class="pull-right w80 mr-10">
+                            <img src="{{imgUrl}}" class="frontPic">
+                        </div>
+                        <div class="lineBox clearfix" style="position: absolute;bottom: 20px;">
+                            <span class="lightblue">公民身份证号码</span><span class="addText">{{cardNum}}</span>
+                        </div>
+                    </div>
+                    <div class="identity identityBack pull-left ml29">
+                        <div class="lineBox pdl20 mt100">
+                            <span class="">签发机关</span><span class="addText">{{issuer}}</span>
+                        </div>
+                        <div class="lineBox pdl20">
+                            <span class="">有效期限</span><span class="addText">{{transform validDate}}</span>
+                        </div>
+                    </div>
+                    <div class="currentPic pull-left ml29">
+                        <img src="{{faceUrl}}" width="186" height="186">
+                        <img id="frame" src="http://static.hpbanking.com/xg/uploads/files/28fd24d40a6d325f3cb7085b7f37ef41-140-140.png">
+                        <div id="scanline"></div>
+                    </div>
+                </div>
+                {{/ifCond}}
+                 {{#ifCond frontImage "==" null}}
+                <div class="pull-left identitiesBox">
+                    <div class="identity identityFront pull-left">
+                        <div class="pull-left w170 clearfix">
+                            <div class="lineBox">
+                                <span class="lightblue">姓名</span><span class="addText">{{borrowerName}}</span>
+                            </div>
+                            <div class="lineBox">
+                                <span class="lightblue">性别</span><span class="addText">{{infoSex sex}}</span><span class="ml-15 lightblue">民族</span>
+                                <span class="addText">{{nation}}</span>
+                            </div>
+                            <div class="lineBox">
+                                <span class="lightblue">出生</span><span class="addText">{{birthdate}}</span>
+                            </div>
+                            <div class="lineBox" style="height:14px;line-height:14px !important;">
+                                <span class="lightblue">住址</span><span class="addText">{{address}}</span>
+                            </div>
+                        </div>
+                        <div class="pull-right w80 mr-10">
+                            <img src="{{imgUrl}}" class="frontPic">
+                        </div>
+                        <div class="lineBox clearfix" style="position: absolute;bottom: 20px;">
+                            <span class="lightblue">公民身份证号码</span><span class="addText">{{cardNum}}</span>
+                        </div>
+                    </div>
+                    <div class="identity identityBack pull-left ml29">
+                        <div class="lineBox pdl20 mt100">
+                            <span class="">签发机关</span><span class="addText">{{issuer}}</span>
+                        </div>
+                        <div class="lineBox pdl20">
+                            <span class="">有效期限</span><span class="addText">{{transform validDate}}</span>
+                        </div>
+                    </div>
+                    <div class="currentPic pull-left ml29">
+                        <img src="{{faceUrl}}" width="186" height="186">
+                        <img id="frame" src="http://static.hpbanking.com/xg/uploads/files/28fd24d40a6d325f3cb7085b7f37ef41-140-140.png">
+                        <div id="scanline"></div>
+                    </div>
+                </div>
+                {{/ifCond}}
+
+                
+                
+                 {{#if frontImage}}
+                <div style="margin-top:80px;">
+                    <div class="identityFrontthir pull-left ml29" style="width:300px;height:180px;">
+                        {{#ifCond frontImage "==" null}}
+                        <div class="currentPic pull-left ml29" style="margin:16px 0 0 45px;">
+                            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+                        </div>
+                        {{!--
+                        <div class="identityFrontthir-bottom" style="left:75px;top:200px;color:white;">身份证正面照(拍摄)</div> --}} {{/ifCond}} {{#ifCond frontImage "!=" null}}
+                        <div class="pic-bg id-pic">
+                            <img src="{{frontImage}}" style="height: 180px;width: 300px;">
+                        </div>
+                        {{!--
+                        <div class="identityFrontthir-bottom" style="left:90px;top:200px;color:white;">身份证正面照(拍摄)</div> --}} {{/ifCond}}
+
+                    </div>
+                    <div class="identityFrontthir pull-left ml29" style="width:300px;height:180px;">
+                        {{#ifCond backImage "==" null}}
+                        <div class="currentPic pull-left ml29" style="margin:16px 0 0 45px;">
+                            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+                        </div>
+                        {{!--
+                        <div class="identityFrontthir-bottom" style="left:75px;top:200px;color:white;">身份证正面照(拍摄)</div> --}} {{/ifCond}} {{#ifCond backImage "!=" null}}
+                        <div class="pic-bg id-pic">
+                            <img src="{{backImage}}" style="height: 180px;width: 300px;">
+                        </div>
+                        {{!--
+                        <div class="identityFrontthir-bottom" style="left:90px;top:200px;color:white;">身份证正面照(拍摄)</div> --}} {{/ifCond}}
+
+                    </div>
+                    <div class="identityFrontthir pull-left ml29">
+                        {{#ifCond faceUrl "==" null}}
+                        <div class="currentPic pull-left ml29" style="margin:16px 0 0 -78px;">
+                            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+                        </div>
+                        {{!--
+                        <div class="identityFrontthir-bottom" style="left:-20px;top:200px;color:white;">本人照片</div> --}} {{/ifCond}} {{#ifCond faceUrl "!=" null}}
+                        <div class=" phonos">
+                            <img src="{{faceUrl}}" style="height: 180px;width: 170px;">
+                        </div>
+                        {{!--
+                        <div class="identityFrontthir-bottom" style="left:15px;top:200px;color:white;">本人照片</div> --}} {{/ifCond}}
+
+                    </div>
+                    <div class="identityFrontthir pull-left ml29">
+                        {{#ifCond imgUrl "==" null}}
+                        <div class="currentPic pull-left ml29" style="margin:16px 0 0 8px;">
+                            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+                        </div>
+                        {{!--
+                        <div class="identityFrontthir-bottom" style="left:60px;top:200px;color:white;">公安证件照</div> --}} {{/ifCond}} {{#ifCond imgUrl "!=" null}}
+                        <div class=" phono">
+                            <img src="{{imgUrl}}" style="height: 180px;width: 170px;">
+                        </div>
+                        {{!--
+                        <div class="identityFrontthir-bottom" style="left:90px;top:200px;color:white;">公安证件照</div> --}} {{/ifCond}}
+
+                    </div>
+                </div>
+
+                {{/if}}
+                   {{!-- {{/ifCond}} --}}
+                 
+            </div>
+
+            <div class="modalBody modal2 displayNone">
+                <div class="title">请上传被查询人授权书和身份证合照，注意身份证勿遮挡授权书</div>
+                <form name="form0" method="post" id="form0">
+                    <div class="addFile">
+                        <input type="file" id="file0" name='file0' multiple="multiple">
+                        <img id='img0' class="displayNone" src="" alt="">
+                        <img src="http://static.hpbanking.com/xg/uploads/files/9ad55f5bc9cfacfc959d74c56468df27-50-50.png" alt="" style="margin-top:80px;">
+                    </div>
+                </form>
+            </div>
+            <div class="modalBody modal3 displayNone">
+                <div class="phoneNum">
+                    <label for="mobile">手机号码：</label>
+                    <input class="input-text w222 phone ml20 mobileNum" id="mobile" maxlength="13" placeholder="请输入被查询人实名号码">
+                </div>
+                <div class="accreditNum">
+                    <label class="accredit" for="accredit">授权码：</label>
+                    <input class="input-text w222 phone ml20" id="accredit" maxlength="13" placeholder="请输入授权码">
+                    <button id="infoSureToModalBtn" data-result="{{result}}" data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}"
+                        data-sex="{{sex}}" data-nation="{{nation}}" data-birthdate="{{birthdate}}" data-address="{{address}}"
+                        data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}" data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}"
+                        data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-customerid="{{customerId}}" data-companyid="{{companyId}}"
+                        data-mobilestatus="{{mobileStatus}}">发送授权码</button>
+                </div>
+            </div>
+            {{!--
+            <div class="modalBody modal4 displayNone">
+            </div> --}} {{#ifCond result "==" 0}}
+            <div class="modalFooter">
+                <div class='nextBtn next'>下一步</div>
+                <div id='uploadImg' class='nextBtn upload displayNone'>上传</div>
+                <div class='nextBtn confirm displayNone'>确定</div>
+            </div>
+            {{/ifCond}} {{#ifCond result "!=" 0}}
+            <div class="modalFooter" id='second-footer'>
+                {{!-- {{#ifCond flowstatus ">=" 20}}<div class='nextBtn next'>下一步</div>{{/ifCond}} --}}
+                {{#ifCond flowStatus ">=" 20 }}<div class='nextBtn next'>下一步</div>{{/ifCond}}
+                {{#ifCond flowStatus "<" 20 }}<div class='nextBtn end-bar'>结束查询</div>{{/ifCond}}
+                {{#ifCond flowStatus "<" 20 }}<div class='nextBtn confirm-me'>我已确定是本人</div> {{/ifCond}}
+                <div id='uploadImg' class='nextBtn upload displayNone'>上传</div>
+                <div class='nextBtn confirm displayNone'>确定</div>
+            </div>
+            <div class="modalFooter displayNone" id='confirm-footer' style="position: absolute;top:330px;left:500px;">
+                <div class='nextBtn next'>下一步</div>
+            </div>
+            {{/ifCond}}
+        </div>
+    </div>
+</div>
+
+    <div id='endChaxun' class="modal fade displayNone" style="position:fixed;width:500px; height:228px;top:20%;left:51%;opacity:1;z-index:100000" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close cancel-button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">温馨提示</h4>
+            </div>
+            {{!-- <div class="modal-body">
+                <div class="row">
+                <div class="col-md-4">.col-md-4</div>
+                <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+                </div>
+                <div class="row">
+                <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+                <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
+                </div>
+                <div class="row">
+                <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+                </div>
+                <div class="row">
+                <div class="col-sm-9">
+                    Level 1: .col-sm-9
+                    <div class="row">
+                    <div class="col-xs-8 col-sm-6">
+                        Level 2: .col-xs-8 .col-sm-6
+                    </div>
+                    <div class="col-xs-4 col-sm-6">
+                        Level 2: .col-xs-4 .col-sm-6
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div> --}}
+            <div class="modal-body">
+                <h4 style="margin: 30px;margin-left:136px;">您确定结束查询么？</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-default cancel-button" style="margin-right:46px;" data-dismiss="modal">否</button>
+                <button type="button" id='end-button' class="btn btn-primary" style="margin-right:185px;">是</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    {{!-- 查询号码不是本人 --}}
+    <div id='bushibenren' class="modal fade displayNone" style="position:fixed;width:500px; height:228px;top:20%;left:51%;opacity:1;z-index:100000" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close cancel-button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <h4 style="margin: 30px;">手机号与本人不匹配！是否继续查询？</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-default cancel-button" style="margin-right:46px;" data-dismiss="modal">否</button>
+                <button type="button" class="btn btn-primary end-button" style="margin-right:185px;">是</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>

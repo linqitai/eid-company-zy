@@ -1,0 +1,33 @@
+<table class="record mt40">
+    <thead class="text-c">
+    <tr><td class="title-bold" colspan="6">典当行为记录</td></tr>
+    <tr>
+        <td>典当物品</td>
+        <td>典当金额</td>
+        <td>典当地点</td>
+        <td>典当时间</td>
+        <td>违约行为</td>
+        <td>描述</td>
+    </tr>
+    </thead>
+    <tbody>
+        {{#if this}}
+            {{#each this}}
+                <tr>
+                    <td><span class="ellipsis w140">{{isEmpty item}}</span></td>
+                    <td><span class="ellipsis w140">{{isEmpty amount}}</span></td>
+                    <td><span class="ellipsis w140">{{isEmpty from}}</span></td>
+                    <td><span class="ellipsis w140">{{isEmpty dateTime}}</span></td>
+                    <td><span class="ellipsis w140">{{isEmpty breachAction}}</span></td>
+                    <td><span class="ellipsis w140">{{isEmpty description}}</span></td>
+                </tr>
+            {{/each}}
+        {{else}}
+            <tr>
+                <td class="text-c" colspan="6">--</td>
+            </tr>
+        {{/if}}
+
+
+    </tbody>
+</table>

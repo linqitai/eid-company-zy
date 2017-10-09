@@ -1,0 +1,88 @@
+<div style="height:413px;" class="" id="moni">
+    <div class="title" style="margin-top:30px;">照片识别</div>
+    <div class="pull-left identitiesBox " style="margin-top:80px;">
+        <div class="identity identityFront pull-left">
+            <div class="pull-left w170 clearfix">
+                <div class="lineBox">
+                    <span class="lightblue">姓名</span><span class="addText">{{h borrowerName}}</span>
+                </div>
+                <div class="lineBox">
+                    <!--<span class="lightblue">性别</span><span class="addText">{{infoSex sex}}</span><span class="ml-15 lightblue">民族</span><span class="addText">{{nation}}</span>-->
+                    <span class="lightblue">性别</span><span class="addText">{{infoSex sex}}</span><span class="ml-15 lightblue">民族</span>
+                    <span class="addText">{{h nation}}</span>
+                </div>
+                <div class="lineBox">
+                    <span class="lightblue">出生</span><span class="addText">{{h birthdate}}</span>
+                </div>
+                <div class="lineBox" style="height:14px;line-height:14px !important;">
+                    <span class="lightblue">住址</span><span class="addText">{{h address}}</span>
+                </div>
+            </div>
+            <div class="pull-right w80 mr-10">
+                <img src="{{imgUrl}}" class="frontPic">
+            </div>
+            <div class="lineBox clearfix" style="position: absolute;bottom: 20px;">
+                <span class="lightblue">公民身份证号码</span><span class="addText" id="cardNum">{{h cardNum}}</span>
+            </div>
+
+        </div>
+        <div class="identity identityBack pull-left ml29">
+            <div class="lineBox pdl20 mt100">
+                <span class="">签发机关</span><span class="addText">{{h issuer}}</span>
+            </div>
+            <div class="lineBox pdl20">
+                <span class="">有效期限</span><span class="addText">{{transform validDate}}</span>
+            </div>
+        </div>
+        <div class="identityFrontthir pull-left ml29">
+            {{#ifCond faceUrl "==" null}}
+            <div class="currentPic pull-left ml29">
+                <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+            </div>
+            {{/ifCond}} {{#ifCond faceUrl "!=" null}}
+            <div class="currentPicNoborder pull-left ml29">
+                <img src="{{faceUrl}}" width="175">
+            </div>
+            {{/ifCond}}
+            <div class="identityFrontthir-bottom">本人照片</div>
+        </div>
+        {{!--
+        <div class="currentPicNoborder pull-left ml29">
+            {{#ifCond faceUrl "==" null}}
+            <div class="currentPic pull-left ml29">
+                <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+            </div>
+            {{/ifCond}} {{#ifCond faceUrl "!=" null}}
+            <div class="currentPicNoborder pull-left ml29">
+                <img src="{{faceUrl}}" width="175">
+            </div>
+            {{/ifCond}}
+        </div>--}}
+
+    </div>
+</div>
+
+
+{{!--
+<div>
+    <div class="pic-bg id-pic">
+        <img src="{{frontImage}}" alt="">
+    </div>
+    <div class="pic-bg id-pics">
+        <img src="{{backImage}}" alt="">
+    </div>
+</div>--}} {{!--
+
+<div>
+    <div class="pic-bg phono">
+        <img src="{{imgUrl}}" alt="">
+    </div>
+    <div class="pic-bg phonos">
+        <img src="{{faceUrl}}" alt="">
+    </div>
+
+
+</div>--}}
+
+</div>
+</div>

@@ -1,0 +1,31 @@
+<div id="modal-modifyInfo" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content radius">
+            <div class="modal-header">
+                <h2 class="modal-title">修改个人信息</h2>
+                <a class="close" data-dismiss="modal" aria-hidden="true">×</a>
+            </div>
+            <form class="form form-horizontal" id="modifyInfoForm">
+                <div class="modal-body" style="overflow: hidden">
+                    <div class="row cl">
+                        <label class="labelText col-xs-4 col-sm-3 text-c">手机号码：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <input type="hidden" class="input-text pull-left" id="customerId" name="customerId">
+                            <input type="text" class="input-text pull-left" id="mobile" name="mobile" maxlength="11" placeholder="请输入手机号码">
+                        </div>
+                    </div>
+                    <div class="row cl mt10">
+                        <label class="labelText col-xs-4 col-sm-3 text-c">姓名：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <input type="text" class="input-text pull-left" id="realName" name="realName" placeholder="请输入姓名">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input class="btn btn-primary" type="submit" value="确定">
+                    <a class="btn" data-dismiss="modal" aria-hidden="true">关闭</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

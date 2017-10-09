@@ -1,0 +1,24 @@
+<div id="modalConfirm4mobile2" class="modal fade"  style="width: 335px;height: 254px;margin-left: -166px;z-index: 1052;top:90px">
+    <div class="modal-dialog">
+        <div class="modal-content radius" style="background-color: #f6f6f6">
+            <div class="modal-header">
+                <div class="modal-title" style="font-size: 17px;text-align: center">温馨提示</div>
+            </div>
+            <div class="modal-body" style="font-size: 15px;padding: 26px !important;background-color: #ffffff !important">
+                <div style="line-height: 30px;">
+                    请确保输入的号码为被查询人本人的号码！
+                    {{!-- <br>
+                    若信息查询失败，仍将按正常收费！ --}}
+                </div>
+                <div style="line-height: 30px;">手机号：{{setMobile mobile}}</div>
+            </div>
+            <div class="modal-footer" style="padding: 10px 28px 20px 28px;background-color: #ffffff !important;border-top:none !important;">
+                <a class="btn pull-left h36" data-dismiss="modal" aria-hidden="true">取消</a>
+                <a class="btn btn-primary h36 pull-right" id="closeModalBtn2" data-dismiss="modal" data-result="{{result}}" data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}" data-birthdate="{{birthdate}}"
+                   data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}" data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}"
+                   data-itemid="{{itemId}}" data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">确定</a>
+
+            </div>
+        </div>
+    </div>
+</div>

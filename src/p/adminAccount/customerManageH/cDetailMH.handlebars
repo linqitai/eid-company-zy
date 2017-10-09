@@ -1,0 +1,96 @@
+<form class="form form-horizontal" id="editCustomerForm">
+  <input type="hidden" name="companyId" value="{{companyId}}">
+  <div class="col-sm-12 text-r">
+    <a href="javascript:void(0)" class="btn btn-primary" id="customerResetPsw" data-companyid="{{companyId}}" data-phone="{{phone}}">重置密码</a>
+    <div class="editOption">
+      <a class="btn btn-primary editBtn" id="editBtn">编辑</a>
+      <input class="btn btn-primary saveBtn current" type="submit" value="保存">
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">客户名称：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <input type="text" class="input-text" placeholder="客户名称" name="companyName" id="companyName" value="{{companyName}}" disabled>
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">联系人：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <input type="text" class="input-text" autocomplete="off" placeholder="联系人" name="linkMan" id="linkMan" value="{{linkMan}}"
+        disabled>
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">手机号码：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <input type="text" class="input-text" autocomplete="off" placeholder="手机号码" name="phone" id="phone" value="{{phone}}" disabled>
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">设备数量：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <input type="text" class="input-text" autocomplete="off" placeholder="设备数量" name="deviceCount" id="deviceCount" value="{{deviceCount}}"
+        disabled>
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">客户类型：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <select name="typeId" id="typeId" value="{{typeId}}" disabled>
+          <option value="">请选择类型</option>
+        </select>
+      <input type="hidden" name="typeName" id="typeName" value="">
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">状态：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <select name="status" id="status" value="{{status}}" disabled>
+          <option value="">请选择类型</option>
+          <option value="0">禁用</option>
+          <option value="1">启用</option>
+        </select>
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">省市：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <div id="province_city"></div>
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">详细地址：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <textarea class="textarea" placeholder="详细地址..." rows="" cols="" name="address" id="address" disabled>{{address}}</textarea>
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">接口：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <select class="form-control" name="isNeedCall" id="isNeedCall" value="{{isNeedCall}}" disabled>
+        <option value="0">不使用</option>
+        <option value="1">使用</option>
+      </select>
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">回调地址：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <input type="text" class="input-text" autocomplete="off" placeholder="回调地址" name="callBackUrl" id="callBackUrl" value="{{callBackUrl}}"
+        disabled>
+    </div>
+  </div>
+  <div class="row cl col-sm-6">
+    <label class="form-label col-xs-4 col-sm-3">LOGO：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+      <div id="picWrapper">
+        <img src="" alt="" id="imgUrl">
+        <div id="showContent">
+          <a id="changeText">更换LOGO</a>
+          <input type="file" class="input-text" autocomplete="off" placeholder="请上传LOGO" id="fileUpload2" accept="image/png,image/jpg,image/jpeg">
+        </div>
+        <input type="text" name="logoUrl" id="logoUrl2">
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,54 @@
+<table class="table table-border table-bordered table-hover" style="margin-top:20px;">
+    <thead class="text-c">
+        <tr>
+            <th>店铺</th>
+            <th>查询时间</th>
+            <th>身份核验次数</th>
+            <th>EID报告次数</th>
+            <th>总金额</th>
+        </tr>
+        {{!--{{#if this}}
+
+        <tr class="text-c">
+            <td>总计</td>
+            <td>{{ this.obj.queryTotal.start}}{{ this.obj.queryTotal.end}}</td>
+            <td>{{this.obj.queryTotal.identityTime}}</td>
+            <td>{{this.obj.queryTotal.reportTime}}</td>
+            <td>
+                {{this.obj.queryTotal.amount}}
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td class="text-c" colspan="8"></td>
+        </tr>
+        {{/if}}--}}
+
+    </thead>
+    <tbody class="text-c">
+        {{#if this}} {{#each this.list}}
+        <tr class="text-c">
+            <td>{{companyName}}</td>
+            <td>{{ date}}</td>
+            {{!--
+            <td>{{identityTime}}</td>
+            <td>{{reportTime}}</td> --}}
+            <td class="sureinfo">
+                {{#ifCond identityTime "==" 0}} {{identityTime}} {{/ifCond}} {{#ifCond identityTime "!=" 0}} <a class="detailBtn underLine"
+                    href="/company/inforService.htm?companyId={{companyId}}&_startTime={{ date}}&_endTime={{ date}}&queryDateType={{queryDateType}}&queryBranch=1">{{identityTime}}</a>{{/ifCond}}
+            </td>
+            <td>
+                {{#ifCond identityTime "==" 0}} {{reportTime}} {{/ifCond}} {{#ifCond identityTime "!=" 0}} <a class="detailBtn underLine"
+                    href="/company/inforService.htm?companyId={{companyId}}&_startTime={{ date}}&_endTime={{ date}}&queryDateType={{queryDateType}}&businessProgress=10&queryBranch=1">{{reportTime}}</a>                {{/ifCond}}
+            </td>
+            <td>
+                {{amount}}
+            </td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

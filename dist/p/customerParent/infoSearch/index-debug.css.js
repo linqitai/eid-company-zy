@@ -1,0 +1,3 @@
+define("xg/eid-company-zy/1.0.4/p/customerParent/infoSearch/index-debug.css", [], function(require, exports, module) {
+    seajs.importStyle("#statusSelect{z-index:100000000}.level-green{top:50%;height:15px;width:15px;background:#3FD342;position:absolute;left:50%;margin-left:-7px;margin-top:-7px}.level-yellow{top:50%;height:15px;width:15px;background:#FCBD13;position:absolute;left:50%;margin-left:-7px;margin-top:-7px}.level-red{top:50%;height:15px;width:15px;background:#EE4747;position:absolute;left:50%;margin-left:-7px;margin-top:-7px}tr td .active{display:block}")
+});

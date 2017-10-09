@@ -1,0 +1,32 @@
+<thead class="text-c">
+  <tr>
+    <th>用户名</th>
+    <th>手机号码</th>
+    <th>姓名</th>
+    <th>状态</th>
+    <th>角色</th>
+    <th>操作</th>
+  </tr>
+</thead>
+<tbody class="text-c">
+  {{#each this}}
+  <tr data-userid="{{userId}}" data-mobile="{{mobile}}" data-realname="{{realName}}" data-status="{{status}}" data-roleid="{{roleId}}" data-username="{{username}}">
+    <td>{{username}}</td>
+    <td>{{mobile}}</td>
+    <td>{{realName}}</td>
+    {{#ifCond status "==" 0}}<td class="c-green">启用</td>{{else}}<td class="c-red">禁用</td>{{/ifCond}}
+    <td>{{roleName}}</td>
+    <td>
+      <a href="javascript:void(0)" class="resetPsw">重置密码</a>
+      <span class="pipe">|</span>
+      <a href="javascript:void(0)" class="edit">编辑</a>
+      <span class="pipe">|</span>
+      {{#ifCond status "==" 0}}
+        <a href="javascript:void(0)" class="disable">禁用</a>
+      {{else}}
+        <a href="javascript:void(0)" class="enable">启用</a>
+      {{/ifCond}}      
+    </td>
+  </tr>
+  {{/each}}
+</tbody>

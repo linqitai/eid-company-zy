@@ -1,0 +1,42 @@
+<table class="table table-border table-bordered table-hover">
+    <thead class="text-c">
+        <tr>
+            <th>姓名</th>
+            <th>身份证号码</th>
+            <th>查询时间</th>
+            <th>门店名称</th>
+            <th>业务状况</th>
+            {{!-- <th>详情</th> --}}
+            <th>身份标识报告</th>
+
+        </tr>
+    </thead>
+    <tbody class="text-c">
+        {{#if this}} {{#each this}}
+        <tr>
+            <td>{{#if borrowerName}}{{borrowerName}}{{/if}}</td>
+            <td>{{#if cardNum}}{{cardNum}}{{/if}}</td>
+            <td>{{#if created}}{{formatDateFull created}}{{/if}}</td>
+            <td>{{#if companyName}}{{companyName}}{{/if}}</td>
+            <td>{{statusText status}}</td>
+            {{!-- <td>
+                {{#ifCond status "==" 0}}未处理{{/ifCond}} {{#ifCond status "==" 1}}已放款（已通过）{{/ifCond}} {{#ifCond status "==" 2}}未通过{{/ifCond}}
+                {{#ifCond status "==" 3}}黑名单{{/ifCond}}
+            </td> --}}
+            <!-- <a href="/cycle/credit/report.htm?encryptKey={{encryptKey}}&&userType=1" target="_blank">查看</a></td> -->
+            {{!--
+            <td><a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}" target="_blank">查看</a>                --}}
+                <td>
+                    {{#ifCond businessProgress "==" '1'}}
+                    <a class="detailBtn underLine" href="/cycle/credit/detail/detailPages.htm?encryptKey={{encryptKey}}&types=1" target="_blank">详情</a>                    {{/ifCond}} {{#ifCond businessProgress "==" '10'}}
+                    <a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}&types=1" target="_blank">查询报告</a>                    {{/ifCond}}
+                </td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="6">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>
+<div class="pager"></div>

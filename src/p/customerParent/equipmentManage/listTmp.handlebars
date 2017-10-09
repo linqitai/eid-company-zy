@@ -1,0 +1,26 @@
+<table class="table table-border table-bordered table-hover">
+    <thead class="text-c">
+        <tr>
+            <th>MAC地址</th>
+            <th>IP地址</th>
+            <th>门店名称</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody class="text-c">
+    {{#if this}}
+        {{#each this}}
+            <tr class="text-c">
+                <td>{{deviceMac}}</td>
+                <td>{{deviceIp}}</td>
+                <td>{{companyName}}</td>
+                <td data-deviceid="{{deviceId}}" data-devicemac="{{deviceMac}}"><a class="edit">编辑</a><span class="pipe">|</span><a class="delete">删除</a></td>
+            </tr>
+        {{/each}}
+    {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+    {{/if}}
+    </tbody>
+</table>

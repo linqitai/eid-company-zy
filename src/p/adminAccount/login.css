@@ -1,0 +1,63 @@
+.text-center{
+	text-align: center;
+}
+.Hui-aside .menu_dropdown li a{
+	font-weight: normal;
+}
+.header{
+	margin-top: 100px;
+}
+#loginForm{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.form .row{
+	margin-top: 30px;
+}
+#loginForm label.error{
+	bottom: -24px;
+	left: 12px;
+}
+#loginForm label.error i{
+	display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    font-style: normal;
+}
+#loginForm .btn-primary{
+	width: 82%;
+	margin-top: 50px;
+}
+.help-block{
+	/*position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;*/
+	height: 100px;
+	line-height: 100px;
+	color: #969696;
+	margin-top: 150px;
+	font-size: 12px;
+}
+#checkCode{
+	width: 75%;
+}
+.checkCode{
+    width: 22%;
+    height: 93%;
+    border: 1px solid #f8f7f7;
+    /* background-color: #e12222; */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.forgetPsd{
+	position: absolute;
+	bottom: 35px;
+	right: 102px;
+	color: #969696;
+}
+.test2 {
+
+}

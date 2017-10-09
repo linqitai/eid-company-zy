@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>身份标识</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>  
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+
+    <link rel="stylesheet" href="../../src/c/css/normalize.css">
+    <link rel='stylesheet' href='../../src/c/css/font-awesome.css'/>
+    <link rel="stylesheet" href="../../src/c/css/bootstrap.css">
+    <link rel='stylesheet' href='../../src/c/css/base/sm.css'/>
+    <link rel="stylesheet" href="../../src/c/css/base/sm-extend.css">
+    <!--<link rel='stylesheet' href='../../src/c/css/base/swiper.css'/>-->
+
+    <link rel="stylesheet" href="../../src/c/css/commonWX.css">
+    <link rel="stylesheet" href="../../src/p/weixin/selectJob/index.css">
+
+    <script src="https://a.alipayobjects.com/??seajs/seajs/2.1.1/sea.js,seajs/seajs-combo/1.0.0/seajs-combo.js,seajs/seajs-text/1.0.2/seajs-text.js,seajs/seajs-style/1.0.2/seajs-style.js,seajs/seajs-log/1.0.0/seajs-log.js,gallery/json/1.0.3/json.js"></script>
+
+    <script src="../../src/config.js"></script>
+    <script>  
+            seajs.config({
+                paths: {
+                    jquery: 'http://localhost/eid-isearch/sea-modules/jquery',
+                    arale: 'http://localhost/eid-isearch/sea-modules/arale',
+                    alinw: 'http://localhost/eid-isearch/sea-modules/alinw',
+                    xg: 'http://localhost'
+                },
+
+                comboExcludes: /.*/,
+                alias: {
+                    'handlebars': 'alinw/handlebars/1.3.0/handlebars'
+                }
+            });
+    </script>
+</head>
+<body>
+    <div class="page page-group">
+        <div class="content">
+            <div class="content-block">
+                <div class="myTitle">选择您所在行业</div>
+            </div>
+            <div class="list">
+                <div class="item">
+                    <div class="wp100">
+                        <span class="pull-left val" data-id="1">车贷</span>
+                        <span class="myRadio20 active pull-right"></span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wp100">
+                        <span class="pull-left val" data-id="2">互联网金融</span>
+                        <span class="myRadio20 pull-right"></span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wp100">
+                        <span class="pull-left val" data-id="3">线下借贷</span>
+                        <span class="myRadio20 pull-right"></span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wp100">
+                        <span class="pull-left val" data-id="4">物流</span>
+                        <span class="myRadio20 pull-right"></span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wp100">
+                        <span class="pull-left val" data-id="5">酒店</span>
+                        <span class="myRadio20 pull-right"></span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wp100">
+                        <span class="pull-left val" data-id="6">安检</span>
+                        <span class="myRadio20 pull-right"></span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wp100">
+                        <span class="pull-left val" data-id="7">租赁</span>
+                        <span class="myRadio20 pull-right"></span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wp100">
+                        <span class="pull-left val" data-id="8">企业招聘</span>
+                        <span class="myRadio20 pull-right"></span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wp100">
+                        <span class="pull-left val" data-id="9">其他</span>
+                        <span class="myRadio20 pull-right"></span>
+                    </div>
+                    <div id="addInput">
+                        <div class="content-block mt10"><input type="text" class="form-control clear" id="jobName" placeholder="请输入行业的名称" maxlength="25"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="bar bar-tab">
+            <div class="barBox pull-left">
+                <span class="pull-left">已选择：</span><span class="tc-red pull-left" id="val">车贷</span>
+            </div>
+            <button class="button button-fill button-primary pull-right" id="sureBtn">确定</button>
+        </nav>
+    </div>
+    <script>
+           seajs.use('../../src/p/weixin/selectJob/index');
+    </script>
+</body>
+</html>

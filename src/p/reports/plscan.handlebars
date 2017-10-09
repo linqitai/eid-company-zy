@@ -1,0 +1,204 @@
+{{!--
+<div class="title title2 overflowHidden" id="plscan">
+    <div class="title2Text" id="reportTitle">人法扫描报告</div>
+</div>--}} {{!--
+<div class="title title2 overflowHidden" id="plscan">
+    <div class="title2Text">报告编号：HP-EID20170608001</div>
+</div>
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td colspan="4">案件记录</td>
+        </tr>
+        <tr>
+            <td>序号</td>
+            <td style="width: 420px">查询机构地点</td>
+            <td style="width: 120px">查询时间</td>
+        </tr>
+        <tr>
+            <td style="width: 250px">1</td>
+            <td style="width: 500px">未知</td>
+            <td style="width: 250px">2017-05-06 15:12:01</td>
+        </tr>
+    </thead>
+</table>
+<br>
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td colspan="4">身份风险汇总</td>
+        </tr>
+        <tr>
+            <td>风险类别</td>
+            <td style="width: 420px">规则</td>
+            <td style="width: 120px">风险等级</td>
+        </tr>
+        <tr>
+            <td style="width: 333px">身份信息核验</td>
+            <td style="width: 333px">被查询人三要素及人脸校验</td>
+            <td style="width: 333px">2</td>
+        </tr>
+        <tr>
+            <td style="width: 333px">公安负面信息</td>
+            <td style="width: 333px">被查询人命中公安负面信息</td>
+            <td style="width: 333px">2</td>
+        </tr>
+        <tr>
+            <td style="width: 333px">法院涉诉信息</td>
+            <td style="width: 333px">被查询人命中法院涉诉信息</td>
+            <td style="width: 333px">2</td>
+        </tr>
+        <tr>
+            <td style="width: 333px">金融信贷信息</td>
+            <td style="width: 333px">被查询人存在多次申请信息</td>
+            <td style="width: 333px">2</td>
+        </tr>
+        <tr>
+            <td style="width: 333px" rowspan="2">身份信息核验</td>
+            <td style="width: 333px">被查询人存在多头借贷信息</td>
+            <td style="width: 333px">2</td>
+        </tr>
+        <tr>
+            <td style="width: 333px">被查询人命中信贷不良信息</td>
+            <td style="width: 333px">2</td>
+        </tr>
+        <tr>
+            <td style="width: 333px">其他综合信息</td>
+            <td style="width: 333px">被查询人手机号及芝麻信息</td>
+            <td style="width: 333px">2</td>
+        </tr>
+    </thead>
+</table>
+<br>
+<table class="scan">
+    <tbody>
+        <tr>
+            <td>法院执行名单</td>
+            <td><span class="ellipsis w500" id="courtExecute"></span></td>
+        </tr>
+        <tr>
+            <td>失信老赖名单</td>
+            <td><span class="ellipsis w500" id="lossCredit"></span></td>
+        </tr>
+        <tr>
+            <td>限制高消费名单</td>
+            <td><span class="ellipsis w500" id="limitHighCost"></span></td>
+        </tr>
+        <tr>
+            <td>限制出入境名单</td>
+            <td><span class="ellipsis w500" id="limitEntryExit"></span></td>
+        </tr>
+        <tr>
+            <td>犯罪及嫌疑人名单</td>
+            <td><span class="ellipsis w500" id="crime"></span></td>
+        </tr>
+        <tr>
+            <td>行政违法名单</td>
+            <td><span class="ellipsis w500" id="breakLaw"></span></td>
+        </tr>
+    </tbody>
+</table>--}} {{!--
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td colspan="4">案件记录</td>
+        </tr>
+        <tr>
+            <td>案号</td>
+            <td style="width: 420px">执行法院</td>
+            <td style="width: 120px">时间</td>
+            <td style="width: 200px">案件状态</td>
+        </tr>
+    </thead>
+    <tbody id="courtList">
+
+    </tbody>
+</table>--}}
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td colspan="5">贷款申请信息</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="width: 250px">平台类型</td>
+            <td style="width: 250px">信贷平台代码</td>
+            <td style="width: 250px">贷款申请时间</td>
+            <td style="width: 250px">申请金额区间</td>
+            <td style="width: 250px">申请结果</td>
+        </tr>
+        {{#if this}} {{#each this}}
+        <tr class="text-c">
+            <td>{{this}}</td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>
+<div>
+    说明：贷款申请信息模块查询时间段为近24个月。
+</div>
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td colspan="4">贷款放贷信息</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="width: 250px">平台类型</td>
+            <td style="width: 250px">信贷平台代码</td>
+            <td style="width: 250px">贷款申请时间</td>
+            <td style="width: 250px">申请金额区间</td>
+        </tr>
+        <tr>
+            <td style="width: 250px">平台类型</td>
+            <td style="width: 250px">信贷平台代码</td>
+            <td style="width: 250px">贷款申请时间</td>
+            <td style="width: 250px">申请金额区间</td>
+        </tr>
+        <tr>
+            <td style="width: 250px">平台类型</td>
+            <td style="width: 250px">信贷平台代码</td>
+            <td style="width: 250px">贷款申请时间</td>
+            <td style="width: 250px">申请金额区间</td>
+        </tr>
+        <tr>
+            <td style="width: 250px">信贷平台代码</td>
+            <td style="width: 250px">贷款申请时间</td>
+            <td style="width: 250px">申请金额区间</td>
+            <td style="width: 250px">申请结果</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    说明：贷款放贷信息模块查询时间段为近24个月。
+</div>
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td colspan="4">贷款不良信息</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="width: 250px">信贷黑名单</td>
+            <td style="width: 250px">传统金融机构逾期</td>
+            <td style="width: 250px">互联网信贷逾期</td>
+            <td style="width: 250px">催收被呼记录</td>
+        </tr>
+        <tr>
+            <td style="width: 250px">平台类型</td>
+            <td style="width: 250px">信贷平台代码</td>
+            <td style="width: 250px">贷款申请时间</td>
+            <td style="width: 250px">申请金额区间</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    说明：金融/信贷信息数据包含银行、P2P、小贷、消费类分期、现金类分期以及非银行其他。
+</div>

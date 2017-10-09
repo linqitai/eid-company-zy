@@ -1,0 +1,8 @@
+#address select:first-child {
+    margin-right: 15px;
+}
+#address select {
+    height: 30px;
+    width: 120px;
+    border: 1px solid #dddddd;
+}

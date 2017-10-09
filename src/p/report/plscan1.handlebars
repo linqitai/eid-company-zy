@@ -1,0 +1,22 @@
+ <h2 class="text-c mt50" style="font-size:40px;">金融/信贷信息</h2>
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td class="title-bold" colspan="5">贷款申请信息</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}} {{#each this}}
+        <tr class="text-c">
+            <td>{{isEmpty bankType}}</td>
+            <td>{{isEmpty platformcode}}</td>
+            <td>{{isEmpty applicationtime}}</td>
+            <td>{{isEmpty applicationamount}}</td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table> 

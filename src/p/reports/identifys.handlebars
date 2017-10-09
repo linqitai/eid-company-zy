@@ -1,0 +1,54 @@
+<div class="" id="really">
+    <div class="title">照片识别</div>
+    <div style="height:220px;">
+        <div class="identityFrontthir pull-left ml29">
+            {{#ifCond frontImage "==" null}}
+            <div class="currentPic pull-left ml29"  style="margin:16px 0 0 70px;">
+                <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+            </div>
+            {{/ifCond}} {{#ifCond frontImage "!=" null}}
+            <div class="pic-bg id-pic">
+                <img src="{{frontImage}}">
+            </div>
+            {{/ifCond}}
+            <div class="identityFrontthir-bottom" style="left:97px;top:200px;">身份证正面照(拍摄)</div>
+        </div>
+        <div class="identityFrontthir pull-left ml29" style="margin:16px 0 0 126px;">
+            {{#ifCond backImage "==" null}}
+            <div class="currentPic pull-left ml29">
+                <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+            </div>
+            {{/ifCond}} {{#ifCond backImage "!=" null}}
+            <div class=" id-pics" style="margin:0 0 0 -88px">
+                <img src="{{backImage}}">
+            </div>
+            {{/ifCond}}
+            <div class="identityFrontthir-bottom" style="left:-5px;top:184px;">身份证反面照(拍摄)</div>
+        </div>
+    </div>
+
+    <div class="identityFrontthir pull-left ml29">
+        {{#ifCond imgUrl "==" null}}
+        <div class="currentPic pull-left ml29" style="margin:16px 0 0 70px;">
+            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+        </div>
+        {{/ifCond}} {{#ifCond imgUrl "!=" null}}
+        <div class=" phono">
+            <img src="{{imgUrl}}">
+        </div>
+        {{/ifCond}}
+        <div class="identityFrontthir-bottom"style="left:127px;top:200px;">本人证件照</div>
+    </div>
+    <div class="identityFrontthir pull-left ml29">
+        {{#ifCond faceUrl "==" null}}
+        <div class="currentPic pull-left ml29" style="margin:16px 0 0 128px;">
+            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+        </div>
+        {{/ifCond}} {{#ifCond faceUrl "!=" null}}
+        <div class=" phonos">
+            <img src="{{faceUrl}}">
+        </div>
+        {{/ifCond}}
+        <div class="identityFrontthir-bottom" style="left:197px;top:200px;">本人照片</div>
+    </div>
+</div>

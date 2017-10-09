@@ -1,0 +1,328 @@
+<table class="table table-border table-bordered table-hover">
+    <thead class="text-c">
+        <tr>
+            <th>时间</th>
+            <th>门店名称</th>
+            <th>客户姓名</th>
+            <th>身份信息</th>
+            <th>手机号</th>
+            <th>查询来源</th>
+            <th>人脸对比</th>
+            <th>风险等级</th>
+            {{!--
+            <th>身份证号码</th>--}}
+            <th>查询状态</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody class="text-c">
+        {{#if this}} {{#each this}}
+        <tr class="text-c">
+            <td>{{formatDateFull created}}</td>
+            <td>{{companyName}}</td>
+            <td>{{borrowerName}}</td>
+            <td>{{formatstatu flowStatus idenAuthentication}}</td>
+            <td>{{formatstatues mobileStatus mobile}}</td>
+            <td>
+                {{#ifCond source "==" '1'}}
+                <div>人证通</div>
+                {{/ifCond}} {{#ifCond source "==" '2'}}
+                <div>APP</div>
+                {{/ifCond}} {{#ifCond source "==" '3'}}
+                <div>接口</div>
+                {{/ifCond}}
+            </td>
+            <td>{{formatstatue result flowStatus}}</td>
+            <td style="position:relative;">
+                {{#ifCond level "==" '1'}}
+                <div class="level-green"></div>
+                {{/ifCond}} {{#ifCond level "==" '2'}}
+                <div class="level-yellow"></div>
+                {{/ifCond}} {{#ifCond level "==" '3'}}
+                <div class="level-red"></div>
+                {{/ifCond}}
+
+
+            </td>
+            {{!--
+            <td>
+                {{#ifCond status "==" '0'}}
+                <span class="c-green">已查看</span> {{/ifCond}} {{#ifCond status "==" '1'}}
+                <span class="c-blue">已通过</span> {{/ifCond}} {{#ifCond status "==" '2'}}
+                <span class="c-red">未通过</span> {{/ifCond}} {{#ifCond status "==" '3'}}
+                <span class="c-black">黑名单</span> {{/ifCond}}
+            </td> --}}
+            <td>
+                {{#ifCond isChecked "==" '1'}}
+                <span class="c-black">  {{#ifCond status "==" '0'}}
+                <span class="c-green">未处理</span> {{/ifCond}} {{#ifCond status "==" '1'}}
+                <span class="c-blue">已通过</span> {{/ifCond}} {{#ifCond status "==" '2'}}
+                <span class="c-red">未通过</span> {{/ifCond}} </span> {{/ifCond}} {{#ifCond isChecked "==" '0'}}
+                <span class="c-black">未查看</span> {{/ifCond}}
+            </td>
+            <td>
+                {{#ifCond source "==" '1'}}
+                <span>
+                      {{#ifCond flowStatus "==" '40'}}
+                <span ><a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}&types=2" target="_blank">查询报告</a></span>                {{/ifCond}} {{#ifCond flowStatus "!=" '40'}}
+                <span><a class="detailBtn underLine" href="/cycle/credit/detail/detailPages.htm?encryptKey={{encryptKey}}&types=2" target="_blank">详情</a></span>                {{#ifCond mobileStatus "==" '1'}}
+                <span>|<a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}"data-pp="{{frontImage}}" data-hh="{{backImage}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">手机号校验</a></span>                {{/ifCond}} {{#ifCond mobileStatus "==" '2'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}"  data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond mobileStatus "==" '0'}}
+                <span>
+                     {{#ifCond authorizUrl "==" '1'}}
+                <span >|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond flowStatus "==" '20'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond flowStatus "==" '10'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond flowStatus "==" '-10'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond flowStatus "==" '-20'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}"data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}}
+                </span>
+                {{/ifCond}} {{/ifCond}}
+
+                </span>{{/ifCond}} 
+
+
+
+
+
+                  {{#ifCond source "==" '2'}}
+                <span>
+                      {{#ifCond flowStatus "==" '40'}}
+                <span ><a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}&types=2" target="_blank">查询报告</a></span>                {{/ifCond}} {{#ifCond flowStatus "!=" '40'}}
+                <span><a class="detailBtn underLine" href="/cycle/credit/detail/detailPages.htm?encryptKey={{encryptKey}}&types=2" target="_blank">详情</a></span>                {{#ifCond mobileStatus "==" '1'}}
+                <span>|<a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-birthdate="{{birthdate}}" data-pp="{{frontImage}}" data-hh="{{backImage}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">手机号校验</a></span>                {{/ifCond}} {{#ifCond mobileStatus "==" '2'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}"  data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond mobileStatus "==" '0'}}
+                <span>
+                     {{#ifCond authorizUrl "==" '1'}}
+                <span >|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond flowStatus "==" '20'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond flowStatus "==" '10'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond flowStatus "==" '-10'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}} {{#ifCond flowStatus "==" '-20'}}
+                <span>|
+                    <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}"data-pp="{{frontImage}}" data-hh="{{backImage}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-auth="{{authorizUrl}}" data-flowStatus="{{flowStatus}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        查询
+                    </a>
+                </span> {{/ifCond}}
+                </span>
+                {{/ifCond}} {{/ifCond}}
+
+                </span>{{/ifCond}} 
+                
+                
+                
+                
+                {{!-- {{#ifCond source "==" '2'}}
+                <span>
+                {{#ifCond flowStatus "==" '40'}}
+                <span ><a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}&types=2" target="_blank">查询报告</a></span>                
+                {{/ifCond}}
+                
+                 {{#ifCond flowStatus "!=" '40'}}
+
+                <span> <a class="detailBtn underLine" href="/cycle/credit/detail/detailPages.htm?encryptKey={{encryptKey}}&types=2" target="_blank">详情</a></span>                
+                {{#ifCond mobileStatus "==" '1'}}
+                <span>|<a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+
+                    data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">手机号校验</a></span>                
+                    {{/ifCond}} 
+                    
+                    {{#ifCond mobileStatus "==" '0'}}
+                <span>
+                       {{#ifCond flowStatus ">=" '10'}}
+                <span > |<a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">手机号校验</a></span>                {{/ifCond}}
+
+
+                </span>
+                {{/ifCond}} {{/ifCond}}
+
+                </span>{{/ifCond}}  --}}
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                {{!--
+                <span>  {{#ifCond flowStatus "!=" '40'}}
+                <span >详情</span>
+                <span>  {{#ifCond flowStatus "==" '-1'}}
+                <span >重新查询</span> {{/ifCond}} {{/ifCond}} --}} {{!-- <span>  {{#ifCond flowStatus "==" '-1'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '1'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond idenAuthentication "==" '3'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '-20'}}
+                <span >详情|查询</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '-10'}}
+                <span >详情|查询</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '10'}}
+                <span >详情|查询</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '20'}}
+                <span >详情|查询</span> {{/ifCond}} {{/ifCond}}--}} {{!-- {{#ifCond source "==" '2'}}
+
+                <span>  {{#ifCond flowStatus "==" '-1'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '1'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond idenAuthentication "==" '3'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '-20'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '-10'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '10'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '20'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond flowStatus "==" '40'}}
+                <span >查询报告</span> {{/ifCond}}
+                <span>  {{#ifCond authorizUrl "!=" '1'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond mobileStatus "==" '1'}}
+                <span >详情</span> {{/ifCond}}
+                <span>  {{#ifCond mobileStatus "==" '2'}}
+                <span >详情|手机号校验</span> {{/ifCond}}
+                <span>  {{#ifCond mobileStatus "==" '2'}}
+                <span >详情|手机号校验</span> {{/ifCond}} {{/ifCond}} --}} {{!-- {{#ifCond businessProgress "=="
+                '1'}}
+                <a class="detailBtn underLine" href="/cycle/credit/detail/detailPages.htm?encryptKey={{encryptKey}}" target="_blank">详情</a>                {{/ifCond}} {{#ifCond businessProgress "==" '10'}}
+                <a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}" target="_blank">查询报告</a>                {{/ifCond}} {{#ifCond flowStatus "==" '10'}}
+                <a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}" target="_blank"> {{#ifCond  mobileStatus "==" '0'}}<span>手机号校验</span> {{/ifCond}}{{#ifCond  mobileStatus "==" '1'}}<span>重新校验</span> {{/ifCond}}</a>                {{/ifCond}} {{#ifCond flowStatus "==" '20'}}
+                <a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}" target="_blank"> {{#ifCond  mobileStatus "==" '0'}}<span>手机号校验</span> {{/ifCond}}{{#ifCond  mobileStatus "==" '1'}}<span>重新校验</span> {{/ifCond}}</a>                {{/ifCond}} --}} {{!-- {{#ifCond flowStatus "==" '10 || 20'}}
+                <a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}" target="_blank"> {{#ifCond  mobileStatus "==" '0'}}<span>手机号校验</span> {{/ifCond}}{{#ifCond  mobileStatus "==" '1'}}<span>重新校验</span> {{/ifCond}}</a>                {{/ifCond}} {{#ifCond mobileStatus "==" '0'}} | <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">校验手机号</a>                {{/ifCond}} {{#ifCond mobileStatus "==" '1'}} | <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}"
+                    data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}"
+                    data-birthdate="{{birthdate}}" data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}"
+                    data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}" data-itemid="{{itemId}}"
+                    data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                        重新查询
+                    </a> {{/ifCond}} {{#ifCond mobileStatus "==" '2'}} {{/ifCond}} --}}
+            </td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="10">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

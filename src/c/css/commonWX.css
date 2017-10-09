@@ -1,0 +1,368 @@
+/*===============================common start===============================*/
+body {
+    overflow-x: hidden;
+    word-break: break-all;
+}
+input,input:focus,input:active{user-select: text;}
+
+.item-input{
+    position: relative;
+}
+/*无限滚动初次加载*/
+.infinite-scroll-preloader{
+    display: none;
+}
+.displayBlock{
+    display: block;
+}
+.displayNone{
+    display: none;
+}
+.displayInline{
+    display: inline-block;
+}
+.clear{
+    clear: both;
+}
+/*边距字体*/
+.mt1{margin-top:1px;}
+.mt2{margin-top:2px;}
+.mt3{margin-top:3px;}
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt20{margin-top:20px;}
+.mt28{margin-top:28px;!important;}
+.mt30{margin-top:30px;!important;}
+.mt50{margin-top:50px !important;}
+.mt80{margin-top:80px !important;}
+.mt100{margin-top:100px !important;}
+
+.ml3{margin-left: 3px;}
+.ml5{margin-left:5px;}
+.ml10{margin-left: 10px}
+.ml15{margin-left: 15px}
+.ml20{margin-left: 20px}
+.ml40{margin-left:38px;}
+.ml30{margin-left:30px;}
+.ml35{margin-left:35px;}
+
+.mr20 {margin-right: 20px;}
+.mr22 {margin-right: 22px;}
+.mr23 {margin-right: 23px;}
+.mr30 {margin-right: 30px;}
+
+.pdb20{
+    padding-bottom: 20px;
+}
+
+/*宽度*/
+.w60 {width: 3rem}
+.w70 {width: 3.5rem}
+.w80 {width: 4rem}
+.w100{width: 5rem}
+.w110{width: 110px}
+.w116{width: 116px}
+.w120{width: 120px}
+.w140{width: 140px}
+.w150 {width: 150px;}
+.w170 {width: 170px;}
+.w180 {width: 180px;}
+.w200 {width: 200px;}
+.w300{width:300px;}
+.w320{width:320px;}
+.wp50{width: 50%}
+.wp80{width: 80%}
+.wp100{width: 100%;overflow: hidden}
+
+
+/*背景颜色*/
+.bc-blue{
+    background-color: #12b7f5;
+}
+.bc-gray{
+    background-color: #f5f5f9;
+}
+.bc-white{
+    background-color: #ffffff;
+}
+/*字体颜色*/
+.tc-white{
+    color:#ffffff;
+}
+.tc-gray{
+    color:#c7c7c7;
+}
+.tc-gray-more{
+    color: #dddddd;
+}
+.tc-red{
+    color:#f6383a;
+}
+.tc-gray{
+    color:#666666;
+}
+.tc-black{
+    color: #323232 !important;
+}
+.tc-blue{
+    color:#00b8f4;
+}
+.tc-green{
+    color: #54d125 !important;
+}
+.border-green{
+    border-color: #54d125 !important;
+}
+/*字体大小*/
+.fs-6{
+    font-size: 0.6rem;
+}
+.fs-7{
+    font-size: 0.7rem;
+}
+.fs-8{
+    font-size: 0.8rem;
+}
+/*marging*/
+.mrt2{
+    margin-top: 0.2rem;
+}
+.mrt3{
+    margin-top: 0.3rem;
+}
+/*===============================common end===============================*/
+.tab_padding{
+    padding-bottom: 1rem;
+}
+/*按钮颜色*/
+.button-gray{
+    background-color: #e5e5e5 !important; 
+    border: 1px solid #e5e5e5 !important; 
+}
+.button-blue{
+    background-color: #00b8f4 !important; 
+    border: 1px solid #00b8f4 !important; 
+}
+/*图片上传*/
+.picker-items{
+    font-size: 0.8rem;
+}
+.picker-modal {
+    background: #eee;
+}
+.picker-modal header {
+    height: 2.2rem!important;
+    background-color: #f7f7f8;
+}
+.item-input{
+    position: relative;
+}
+/*宽度*/
+.width100{
+    width: 100% !important;
+}
+/*高度*/
+.height-56{
+    height:5.6rem;
+}
+
+/* 显示与隐藏 */
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+/*吐丝*/
+.tusi{
+    background-color: #333333;
+    color: white;
+    position: absolute;
+    border-radius: 0.1rem;
+    padding: 0.25rem 0.4rem;
+    font-size: 0.75rem;
+    z-index: 1100;
+}
+.myModalConfirm {
+    position: absolute;
+    background-color: #efeff4;
+    z-index: 1050;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    -webkit-border-radius:0.4rem;
+    -moz-border-radius:0.4rem;
+    border-radius:0.4rem;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20%;
+    box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.4);
+    animation:upToDown 200ms forwards;
+    font-size: 0.78rem;
+}
+@keyframes upToDown {
+    from {
+        -webkit-transform: translate3d( 0,-100%,0);
+        transform: translate3d(0,-100%,0);
+        opacity: .5;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes upToDown {
+    from {
+        -webkit-transform: translate3d( 0,-100%,0);
+        transform: translate3d(0,-100%,0);
+        opacity: .5;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+.myModalConfirm .tip{
+    padding:0.2rem 0rem;
+    color: #ff0000;
+    font-size: 0.66rem;
+}
+.myModalConfirm.fade .modal-dialog {
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition:      -o-transform .3s ease-out;
+    transition:         transform .3s ease-out;
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    -o-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+}
+.myModalConfirm.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+.myModalConfirm .myModalHeader {
+    min-height: 0.8rem;
+    padding: 0.8rem 0.6rem 0rem 0.6rem;
+    /*border-bottom: 0.05rem solid #e5e5e5;*/
+    color: #323232;
+    text-align: center;
+}
+.myModalConfirm .myModalHeader .close {
+    margin-top: -0.1rem;
+}
+.myModalConfirm .myModalTitle {
+    margin: 0;
+    line-height: 1.42857143;
+    font-size: 0.94rem;
+    font-weight: 500;
+}
+.myModalBody {
+    position: relative;
+    padding: 0.5rem 0.5rem 0.8rem 0.5rem;
+}
+.myModalBody .lineGroup{
+    padding-top:0.2rem;
+}
+.myRadio16{
+    background: url("http://static.hpbanking.com/xg/uploads/files/73d821a10d91eae03bce0030c1a5af29-20-20.png") no-repeat bottom;
+    background-size: 16px;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    display: inline-block;
+}
+.myRadio20{/*http://static.hpbanking.com/xg/uploads/files/523f8fca41f55aea9a70dae4c43eb4e7-34-34.png*/
+    background: url("http://static.hpbanking.com/xg/uploads/files/16602b823dd26125c5e1e8885fec6023-20-20.png") no-repeat bottom;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    display: inline-block;
+}
+.myRadio20.active{
+    background: url("http://static.hpbanking.com/xg/uploads/files/73d821a10d91eae03bce0030c1a5af29-20-20.png") no-repeat bottom;
+}
+.myModalFooter {
+    text-align: right;
+    border-top:0.05rem solid #e5e5e5;
+}
+.myModalFooter .btn + .btn {
+    margin-bottom: 0;
+    margin-left: 0.25rem;
+}
+.myModalFooter .btn-group .btn + .btn {
+    margin-left: -0.05rem;
+}
+.myModalFooter .btn-block + .btn-block {
+    margin-left: 0;
+}
+.myModalFooter .myModalFooterBtnGroup{
+    margin:0 auto;
+    width: 100%;
+    height: 100%;
+}
+.myModalFooter .myModalFooterBtnGroup a{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    width: 49%;
+    font-size: 0.78rem;
+}
+.myModalFooter .myModalFooterBtnGroup a:first-child{
+    border-right: 0.05rem #e5e5e5 solid;
+    /*color: #b1b1b1;*/
+}
+/*当数据不存在或出错页面的css*/
+.errorDiv{
+    font-size: 0.78rem;
+    color: #323232;
+    text-align: center;
+}
+.errorTip{
+    color: #1296db;
+    font-size: 1rem;
+}
+/*遮罩层样式*/
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.modal-backdrop.fade {
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    padding: 0.32rem 0.64rem;
+    font-size: 0.7rem;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+

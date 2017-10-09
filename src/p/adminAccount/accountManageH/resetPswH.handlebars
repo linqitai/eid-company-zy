@@ -1,0 +1,21 @@
+ <div id="modal-resetPsw" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content radius">
+      <div class="modal-header">
+        <h5 class="modal-title">重置密码</h5>
+        <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+      </div>
+      <form class="form form-horizontal" id="resetPswForm">
+        <input type="hidden" name="userId" id="userId" value="{{userId}}">
+        <div class="modal-body">
+            是否重置<span>{{mobile}}</span>账号密码为手机号码？
+        </div>
+        <div class="modal-footer">
+          <input class="btn btn-primary" type="submit" value="确认">
+          <!-- <button type="submit" class="btn btn-primary">确定</button> -->
+          <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

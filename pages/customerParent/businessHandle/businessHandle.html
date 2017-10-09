@@ -1,0 +1,87 @@
+<link rel="stylesheet" type="text/css" href="http://localhost/eid-company/src/c/static/h-ui/css/H-ui.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost/eid-company/src/c/static/h-ui.admin/css/H-ui.admin.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost/eid-company/src/c/lib/Hui-iconfont/1.0.7/iconfont.css"/>
+
+<link rel="stylesheet" type="text/css" href="http://localhost/eid-company/src/c/css/customerParentCommon.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost/eid-company//src/p/customerParent/businessHandle/index.css"/>
+<!-- S GLOBAL JS -->
+<script src="https://a.alipayobjects.com/??seajs/seajs/2.1.1/sea.js,seajs/seajs-combo/1.0.0/seajs-combo.js,seajs/seajs-text/1.0.2/seajs-text.js,seajs/seajs-style/1.0.2/seajs-style.js,seajs/seajs-log/1.0.0/seajs-log.js,gallery/json/1.0.3/json.js"></script>
+<!-- E GLOBAL JS -->
+
+<script src="http://localhost/eid-company/src/config.js"></script>
+<script>
+    seajs.config({
+        paths: {
+            jquery: 'http://localhost/eid-company/sea-modules/jquery',
+            arale: 'http://localhost/eid-company/sea-modules/arale',
+            alinw: 'http://localhost/eid-company/sea-modules/alinw',
+            xg: 'http://localhost'
+        },
+
+        comboExcludes: /.*/,
+        alias: {
+            'handlebars': 'alinw/handlebars/1.3.0/handlebars'
+        }
+    });
+</script>
+
+<div class="page">
+    <div class="queryBox">
+        <label class="labelText pull-left">门店名称：</label>
+        <select class="input-text pull-left w140" id="storeNameSelect">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <div class="searchGroup">
+            <input type="text" class="input-text pull-right w200" id="searchText" placeholder="请输入客户姓名">
+            <i class="Hui-iconfont searchIcon" id="searchIcon">&#xe665;</i>
+        </div>
+    </div>
+    <table class="table table-border table-bordered table-hover">
+        <thead class="text-c">
+            <tr>
+                <th>时间</th>
+                <th>门店名称</th>
+                <th>客户姓名</th>
+                <th>身份证号码</th>
+                <th>查询状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody class="content">
+            <tr class="text-c">
+                <td>序号</td>
+                <td>新闻标题</td>
+                <td>发布时间</td>
+                <td>详情</td>
+                <td>未查询</td>
+                <td><a class="underLine">详情</a></td>
+            </tr>
+            <tr class="text-c">
+                <td>序号</td>
+                <td>新闻标题</td>
+                <td>发布时间</td>
+                <td>详情</td>
+                <td>编辑</td>
+                <td><a class="underLine">详情</a></td>
+            </tr>
+            <tr class="text-c">
+                <td>序号</td>
+                <td>新闻标题</td>
+                <td>发布时间</td>
+                <td>详情</td>
+                <td>编辑</td>
+                <td><a class="underLine">详情</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <!--<div class="emptyDate" id="emptyDate"><img src="http://static.hpbanking.com/xg/uploads/files/5f378673b274c8be9c47dedbdd79e09a-32-32.gif"></div>-->
+    <div id="pager" class="left"></div>
+</div>
+    
+<script>
+  seajs.use('xg/eid-company/src/p/customerParent/businessHandle/index');
+</script>

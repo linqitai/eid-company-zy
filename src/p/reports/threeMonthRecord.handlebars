@@ -1,0 +1,11 @@
+{{#if this}}
+    {{#each this}}
+        <tr  class="text-c">
+            <td class="">{{formatDateFull time}}</td><td>{{address}}</td>
+        </tr>
+    {{/each}}
+{{else}}
+    <tr>
+        <td class="text-c" colspan="3">--</td>
+    </tr>
+{{/if}}

@@ -1,0 +1,25 @@
+<div id="modal-add" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content radius">
+            <div class="modal-header">
+                <h2 class="modal-title">新增MAC地址</h2>
+                <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+            </div>
+            <form class="form form-horizontal" id="addForm">
+                <div class="modal-body" style="overflow: hidden">
+                    <div class="row cl">
+                        <label class="labelText col-xs-4 col-sm-3 text-l">MAC地址：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <input type="text" class="input-text pull-left" id="deviceMac" name="deviceMac" placeholder="请输入MAC地址">
+                            <input type="hidden" class="input-text pull-left" id="deviceId" name="deviceId">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input class="btn btn-primary" type="submit" id="sureAddBtn" value="确定">
+                    <a class="btn" data-dismiss="modal" aria-hidden="true">关闭</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

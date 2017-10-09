@@ -1,0 +1,50 @@
+ <div id="modal-addAccount" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content radius">
+      <div class="modal-header">
+        <h5 class="modal-title">新增账户</h5>
+        <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+      </div>
+      <form class="form form-horizontal" id="addAccountForm">
+        <div class="modal-body">
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-3">手机号码：</label>
+              <div class="formControls col-xs-8 col-sm-8">
+                <input type="text" class="input-text" autocomplete="off" placeholder="手机号码" name="mobile" id="mobile">
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-3">姓名：</label>
+              <div class="formControls col-xs-8 col-sm-8">
+                <input type="text" class="input-text" autocomplete="off" placeholder="姓名" name="realName" id="realName">
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-3">角色：</label>
+              <div class="formControls skin-minimal col-xs-8 col-sm-9 role_radio">
+                
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-3">状态：</label>
+              <div class="formControls skin-minimal col-xs-8 col-sm-9">
+                <div class="radio-box">
+                  <input type="radio" id="status-1" name="status" value="0" checked>
+                  <label for="status-1">启用</label>
+                </div>
+                <div class="radio-box">
+                  <input type="radio" id="status-2" name="status" value="1">
+                  <label for="status-2">禁用</label>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <input class="btn btn-primary" type="submit" value="提交">
+          <!-- <button type="submit" class="btn btn-primary">确定</button> -->
+          <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

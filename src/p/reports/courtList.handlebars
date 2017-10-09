@@ -1,0 +1,14 @@
+{{#if this}}
+    {{#each this}}
+        <tr>
+            <td>{{caseCode}}</td>
+            <td>{{courtName}}</td>
+            <td>{{getLocalTime1 regDate}}</td>
+            <td><span class="ellipsis">{{setNull caseState}}</span></td>
+        </tr>
+    {{/each}}
+{{else}}
+    <tr>
+        <td class="text-c" colspan="4">--</td>
+    </tr>
+{{/if}}

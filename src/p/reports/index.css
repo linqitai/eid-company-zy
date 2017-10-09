@@ -1,0 +1,90 @@
+body{
+    /*background: url("http://static.hpbanking.com/xg/uploads/files/4316ce170da8e934f766400ba6735c19-198-66.png") repeat;*/
+    background-origin: padding-box;
+}
+.wrapper{
+    width: 1000px;
+    margin:0 auto;
+    padding:15px 0 55px;
+}
+.title{
+    text-align: center;
+}
+.tip{
+    color: #ff4545;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+}
+.title1{
+    font-size: 40px;
+    height: 90px;
+    line-height: 90px;
+}
+.title2{
+    font-size: 18px;
+    color: #242424;
+    width: 180px !important;
+    margin:0 auto;
+    height: 68px;
+    display: table;
+    overflow: hidden;
+}
+/*
+http://static.hpbanking.com/xg/uploads/files/daf403258e6ea44b9f8ec71acdd8ff53-68-59.png red
+http://static.hpbanking.com/xg/uploads/files/2b8a302f52aafbbb3e8662bacd0f9038-68-59.png orange
+http://static.hpbanking.com/xg/uploads/files/3fd8c16a233b38c70009771ea9cc0a1a-68-59.png green
+http://static.hpbanking.com/xg/uploads/files/418f7dd37ca11069907c5ea3cd15eefd-1920-899.png 背景图片
+*/
+.titleIconRed{
+    background: url("http://static.hpbanking.com/xg/uploads/files/daf403258e6ea44b9f8ec71acdd8ff53-68-59.png") no-repeat right 14px;
+}
+.titleIconYellow{
+    background: url("http://static.hpbanking.com/xg/uploads/files/2b8a302f52aafbbb3e8662bacd0f9038-68-59.png") no-repeat right 14px;
+}
+.titleIconGreen{
+    background: url("http://static.hpbanking.com/xg/uploads/files/06919dc862dfd2f00dd2b90913b8449e-46-40.png") no-repeat right 14px;
+}
+.title2Text{
+    display: table-cell;
+    height: 74px;
+    text-align: left;
+    vertical-align: middle;
+    color: #242424;
+}
+table{
+
+}
+table tr td{
+    font-size:18px;
+    text-align: center;
+    height: 58px;
+    line-height: 58px;
+    border: 1px solid #a0a0a0;
+    color: #242424;
+}
+table.record tr td:first-child{
+    width: 265px;
+}
+table.record tr td:nth-child(2){
+    width: 235px;
+}
+table.scan tr td:first-child,table.loanBehavior tr td:first-child,table.badBehavior tr td:first-child{
+    width: 500px;
+}
+/*table.loanBehavior tr td:last-child{
+    width: 556px;
+}*/
+.ellipsis{
+    margin:0 auto;
+    display:block;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+table.penalRecord tbody tr td,table.insuranceCheat tbody tr td{
+    height: 170px;
+}
+table.communicationTrack tr td{
+     width: 500px;
+}

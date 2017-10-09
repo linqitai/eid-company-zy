@@ -1,0 +1,33 @@
+<thead class="text-c">
+    <tr>
+        <th>手机号码</th>
+        <th>姓名</th>
+        <th>状态</th>
+        <th>类型</th>
+        <th>操作</th>
+    </tr>
+</thead>
+<tbody class="text-c">
+{{#if this}}
+    {{#each this}}
+        <tr class="text-c">
+            <td>{{mobile}}</td>
+            <td>{{realName}}</td>
+            <td>
+                {{#ifCond status "==" '0'}}
+                    <span class="c-green">启用</span>
+                {{/ifCond}}
+                {{#ifCond status "==" '1'}}
+                    <span class="c-red">禁用</span>
+                {{/ifCond}}
+            </td>
+            <td>{{roleName}}</td>
+            <td data-customerid="{{customerId}}" data-mobile="{{mobile}}" data-realname="{{realName}}" data-status="{{status}}" data-rolename="{{roleName}}" data-roleid="{{roleId}}"><a class="reset">重置密码</a><span class="pipe">|</span><a class="edit">编辑</a><span class="pipe">|</span><a class="delete">删除</a></td>
+        </tr>
+    {{/each}}
+{{else}}
+    <tr>
+        <td class="text-c" colspan="8">查无数据</td>
+    </tr>
+{{/if}}
+</tbody>

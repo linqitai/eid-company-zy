@@ -1,0 +1,23 @@
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td colspan="5">贷款放款信息</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {{#if this}} {{#each this}}
+        <tr class="text-c">
+            <td>{{this}}</td>
+            <td>{{bankType}}</td>
+            <td>{{loanlendersamount}}</td>
+            <td>{{loanlenderstime}}</td>    
+            <td>{{platformcode}}</td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td style="width:120px;">序号</td>
+            <td class="title-bold" colspan="5">法院公告</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}} {{#each this}}
+        <tr>
+            <td rowspan="5" style="width:120px;">{{addOne @index}}</td>
+            <td>姓名</td>
+            <td >发布时间</td>
+            <td >法院名称</td>
+            <td >公告类型</td>
+        </tr>
+        <tr>
+            <td class="report-content">{{pname}}</td>
+            <td class="report-content">{{sortTimeString}}</td>
+            <td class="report-content">{{court}}</td>
+            <td class="report-content">{{ggType}}</td>
+        </tr>
+        <tr>
+            <td >公告版面</td>
+            <td class="match-level">匹配度</td>
+            <td colspan="4">内容概要</td>
+        </tr>
+        <tr>
+            <td class="report-content">{{layout}}</td>
+            <td class="report-content">{{matching matchRatio}}</td>
+            <td colspan="4" class="report-content">{{body}}</td>
+        </tr>
+        {{/each}}
+        {{else}}
+        <tr>
+            <td  style="width:120px;">1</td>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

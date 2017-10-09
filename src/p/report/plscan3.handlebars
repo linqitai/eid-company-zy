@@ -1,0 +1,23 @@
+ <table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td class="title-bold" colspan="5">信贷不良信息</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}} {{#each this}}
+        <tr class="text-c">
+            {{#each this}}
+            <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>
+
+<h4 style="margin:20px;font-size:18px;color:#242424;">说明：金融/信贷信息数据包含银行、P2P、小贷、消费类分期、现金类分期以及非银行其他。</h4>
+ 

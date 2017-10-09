@@ -1,0 +1,55 @@
+<table class="table table-border table-bordered table-hover">
+    <thead class="text-c">
+    <tr>
+        <th>时间</th>
+        <th>门店名称</th>
+        <th>客户姓名</th>
+        <th>身份证号码</th>
+        <th>查看状态</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody class="text-c">
+    {{#if this}}
+        {{#each this}}
+            <tr class="text-c">
+                <td>{{formatDateFull created}}</td>
+                <td>{{companyName}}</td>
+                <td>{{borrowerName}}</td>
+                <td>{{cardNum}}</td>
+                <td>
+                    {{#ifCond isChecked "==" '0'}}
+                        <span class="c-red">未查看</span>
+                    {{/ifCond}}
+                    {{#ifCond isChecked "==" '1'}}
+                        <span class="c-green">已查看</span>
+                    {{/ifCond}}
+                </td>
+                <td>
+                    <a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}" target="_blank">详情</a>
+
+                    {{#ifCond mobileStatus "==" '0'}}
+                        | <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}" data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}" data-birthdate="{{birthdate}}"
+                             data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}" data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}"
+                             data-itemid="{{itemId}}" data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">校验手机号</a>
+                    {{/ifCond}}
+                    {{#ifCond mobileStatus "==" '1'}}
+                        | <a class="underLine vMobileAgainToModalBtn" data-result="{{result}}" data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}" data-birthdate="{{birthdate}}"
+                             data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}" data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}"
+                           data-itemid="{{itemId}}" data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">
+                            重新查询
+                        </a>
+                    {{/ifCond}}
+                    {{#ifCond mobileStatus "==" '2'}}
+
+                    {{/ifCond}}
+                </td>
+            </tr>
+        {{/each}}
+    {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+    {{/if}}
+    </tbody>
+</table>

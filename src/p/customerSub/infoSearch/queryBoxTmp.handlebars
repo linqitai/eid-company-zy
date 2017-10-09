@@ -1,0 +1,52 @@
+
+<div class="queryBox text" id="statusSelect">
+    <label class="labelText w70 pull-left text-r">状态：</label>
+    <input class="btn radius primary" type="button" id="statu" value="全部" data-status="" data-a="">
+    <input class="btn btn-link radius asd" type="button" id="statu1" data-a="1" value="未查看" data-statu="4"><span>({{notChecked}})</span>
+    <input class="btn btn-link radius" type="button" value="未处理" id="statu2" data-statu="0"data-a="2"><span>({{businessUntreatedCount}})</span>
+    <input class="btn btn-link radius" type="button" id="statu3"data-a="3" value="未通过" data-statu="2"><span>({{businessNotPassCount}})</span>
+    <input class="btn btn-link radius" type="button"id="statu4" data-a="4" value="已通过" data-statu="1"><span>({{businessPassCount}})</span>
+</div>
+<div class="queryBox text" id="statusSelect1">
+    <label class="labelText w70 pull-left text-r">风险等级：</label>
+    <input class="btn radius primary" type="button" id="levebtn" data-b="" value="全部" data-level="">
+    <input class="btn  btn-link radius" type="button" id="levebtn1" data-b="1" value="红" data-level="3">
+    <input class="btn btn-link radius" type="button"id="levebtn2" data-b="2" value="黄" data-level="2">
+    <input class="btn btn-link radius" type="button"id="levebtn3" data-b="3" value="绿" data-level="1">
+</div>
+<div class="queryBox text" id="statusSelect2">
+    <label class="labelText w70 pull-left text-r">身份信息：</label>
+    <input class="btn radius primary" type="button" id="idcard" data-c=""value="全部" data-idval="">
+    <input class="btn btn-link radius" type="button" id="idcard1" data-c="1"value="验证通过" data-idval="1"><span>({{identityPassCount}})</span>    {{!--
+    <input class="btn btn-link radius" type="button" value="已查看" data-idval="0">--}}
+    <input class="btn btn-link radius" type="button" id="idcard2" data-c="2"value="验证失败" data-idval="-1"><span>({{identityNotPassCount}})</span>
+    <input class="btn btn-link radius" type="button" id="idcard3"data-c="3" value="身份证过期" data-idval="3"><span>({{identityExpiredCount}})</span>    {{!--
+    <input class="btn btn-link radius" type="button" value="黑名单" data-idval="3">--}}
+</div>
+<div class="queryBox text" id="statusSelect3">
+    <label class="labelText w70 pull-left text-r">人脸对比：</label>
+    <input class="btn radius primary" type="button" id="face" data-d=""value="全部" data-face="">
+    <input class="btn btn-link radius" type="button" id="face1" data-d="1"value="识别通过" data-face="10"><span>({{faceVerificationPassCount}})</span>    {{!--
+    <input class="btn btn-link radius" type="button" value="已查看" data-face="0">--}}
+    <input class="btn btn-link radius" type="button" id="face2" data-d="2"value="人工通过" data-face="20"><span>({{faceVerificationLabourPassCount}})</span>
+    <input class="btn btn-link radius" type="button" id="face3"data-d="3" value="未通过" data-face="-10"><span>({{faceVerificationNotPassCount}})</span>
+    <input class="btn btn-link radius" type="button" id="face4" data-d="4"value="人工未通过" data-face="-20"><span>({{faceVerificationLabourNotPassCount}})</span>    {{!--
+    <input class="btn btn-link radius" type="button" value="黑名单" data-face="3">--}}
+</div>
+<div class="queryBox text" id="statusSelect5">
+    <label class="labelText w70 pull-left text-r">查询来源：</label>
+    <input class="btn radius primary" type="button"  value="全部" data-face="">
+    <input class="btn btn-link radius" type="button"  value="人证通" data-source="1">
+    <input class="btn btn-link radius" type="button"  value="接口" data-source="3">
+    <input class="btn btn-link radius" type="button"  value="APP" data-source="2">
+ 
+</div>
+<div class="queryBox text" id="statusSelect4">
+    <label class="labelText w70 pull-left text-r">手机校验：</label>
+    <input class="btn radius primary" type="button" id="check" data-f=""value="全部" data-status="">
+    <input class="btn btn-link radius" type="button" id="check1" data-f="1"value="未校验" data-status="0"><span>({{mobileCheckUntreatedCount}})</span>    {{!--
+    <input class="btn btn-link radius" type="button" value="已查看" data-status="0">--}}
+    <input class="btn btn-link radius" type="button" id="check2" data-f="2"value="校验失败" data-status="1"><span>({{mobileCheckNotPassCount}})</span>
+    <input class="btn btn-link radius" type="button" id="check3"data-f="3" value="校验成功" data-status="2"><span>({{mobileCheckPassCount}})</span>    {{!--
+    <input class="btn btn-link radius" type="button" value="黑名单" data-status="3">--}}
+</div>

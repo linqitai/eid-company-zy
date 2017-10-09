@@ -1,0 +1,38 @@
+<thead class="text-c">
+    <tr>
+        <th>客户名称/联系电话</th>
+        <th>门店名称/联系电话</th>
+        <th>设备MAC地址</th>
+        <th>IP地址</th>
+        <th>状态</th>
+        <th>最后调用时间</th>
+        <th>设备版本号</th>
+        <th>操作</th>
+    </tr>
+</thead>
+<tbody class="text-c">
+{{#if this}}
+{{#each this}}
+  <tr>
+    <td>{{#if parentName}}{{parentName}}/{{/if}}{{#if parentPhone}}{{parentPhone}}{{/if}}</td>
+    <td>{{#if childName}}{{childName}}/{{/if}}{{#if childPhone}}{{childPhone}}{{/if}}</td>
+    <td>{{#if deviceMac}}{{deviceMac}}{{/if}}</td>
+    <td>{{#if deviceIp}}{{deviceIp}}{{/if}}</td>
+    {{#ifCond forbidden "==" 0}}<td class="c-red">禁用</td>{{else}}<td class="c-green">启用</td>{{/ifCond}}
+    <td>{{#if lastUseTime}}{{formatDate lastUseTime}}{{/if}}</td>
+    <td>{{#if version}}{{version}}{{/if}}</td>
+    <td>
+        {{#ifCond forbidden "==" 0}}
+            <a href="javascript:void(0)" class="enDisable" data-forbidden="1" data-deviceid="{{deviceId}}" data-devicemac="{{deviceMac}}">启用</a>
+        {{else}}
+            <a href="javascript:void(0)" class="enDisable" data-forbidden="0" data-deviceid="{{deviceId}}" data-devicemac="{{deviceMac}}">禁用</a>
+        {{/ifCond}}
+    </td>
+  </tr>
+{{/each}}
+{{else}}
+    <tr>
+        <td class="text-c" colspan="8">查无数据</td>
+    </tr>
+{{/if}} 
+</tbody>

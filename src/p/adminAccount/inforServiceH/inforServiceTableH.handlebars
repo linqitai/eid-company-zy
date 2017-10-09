@@ -1,0 +1,70 @@
+<thead class="text-c">
+    <tr>
+        <th>姓名</th>
+        <th>手机号</th>
+        <th>查询时间</th>
+        <th>客户名称</th>
+        <th>门店名称</th>
+        <th>查询来源</th>
+        <th>身份信息</th>
+        <th>人脸比对</th>
+        <th>风险等级</th>
+        <th>业务状况</th>
+        <th>身份标识报告</th>
+    </tr>
+</thead>
+<tbody class="text-c">
+    {{#if this}} {{#each this}}
+    <tr>
+        <td>{{borrowerName}}</td>
+        <td>{{formatstatues mobileStatus mobile}}</td>
+        <td>{{formatDateFull created}}</td>
+        <td>{{companyName}}</td>
+        <td>{{childName}}</td>
+        {{!--
+        <td>{{statusText status}}</td>--}}
+        <td>
+            {{#ifCond source "==" '1'}} 人证通 {{/ifCond}} {{#ifCond source "==" '3'}} 接口 {{/ifCond}} {{#ifCond source "==" '2'}} App {{/ifCond}}
+        </td>
+        <td>
+            {{formatstatu flowStatus idenAuthentication}}
+        </td>
+        <td>
+            {{formatstatue result flowStatus }}
+        </td>
+        <td style="position:relative;">
+            {{#ifCond level "==" '1'}}
+            <div class="level-green"></div>
+            {{/ifCond}} {{#ifCond level "==" '2'}}
+            <div class="level-yellow"></div>
+            {{/ifCond}} {{#ifCond level "==" '3'}}
+            <div class="level-red"></div>
+            {{/ifCond}}
+        </td>
+        {{!--
+        <td>
+            {{#ifCond status "==" '0'}} 未处理 {{/ifCond}} {{#ifCond status "==" '3'}} 黑名单 {{/ifCond}} {{#ifCond status "==" '2'}} 未通过 {{/ifCond}}
+            {{#ifCond status "==" '1'}} 已放款 {{/ifCond}}
+        </td> --}}
+        <td>
+            {{#ifCond isChecked "==" '1'}}
+            <span class="c-black">  {{#ifCond status "==" '0'}}
+                <span class="c-green">未处理</span> {{/ifCond}} {{#ifCond status "==" '1'}}
+            <span class="c-blue">已通过</span> {{/ifCond}}{{#ifCond status "==" '3'}}
+            <span class="c-blue">黑名单</span> {{/ifCond}} {{#ifCond status "==" '2'}}
+            <span class="c-red">未通过</span> {{/ifCond}} </span> {{/ifCond}} {{#ifCond isChecked "==" '0'}}
+            <span class="c-black">未查看</span> {{/ifCond}}
+        </td>
+        <td>
+            {{#ifCond businessProgress "==" '1'}}
+            <a class="detailBtn underLine" href="/cycle/credit/detail/detailPages.htm?encryptKey={{encryptKey}}&types=1" target="_blank">详情</a>            {{/ifCond}} {{#ifCond businessProgress "==" '10'}}
+            <a class="detailBtn underLine" href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}&types=1" target="_blank">查询报告</a>            {{/ifCond}}
+
+        </td>
+    </tr>
+    {{/each}} {{else}}
+    <tr>
+        <td class="text-c" colspan="11">查无数据</td>
+    </tr>
+    {{/if}}
+</tbody>

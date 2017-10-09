@@ -1,0 +1,60 @@
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td style="width:120px;">序号</td>
+            <td class="title-bold" colspan="4">案件流程</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}} {{#each this}}
+        <tr>
+            <td rowspan="7" style="width:120px;">{{addOne @index}}</td>
+            <td>立案时间</td>
+            <td>案件类型</td>
+            <td>判决日期</td>
+            <td class="match-level">匹配度</td>
+        </tr>
+        <tr>
+            <td class="report-content">{{isEmpty sortTimeString}}</td>
+            <td class="report-content">{{isEmpty caseType}}</td>
+            <td class="report-content">{{isEmpty sentencingDate}}</td>
+            <td class="report-content">{{matching matchRatio}}</td>
+        </tr>
+        <tr>
+            <td >案件状态</td>
+            <td >法院名称</td>
+            <td >审理状态</td>
+            <td >审理程序</td>
+            
+        </tr>
+        <tr>
+            <td class="report-content">{{isEmpty caseStatus}}</td>
+            <td class="report-content">{{isEmpty court}}</td>
+            <td class="report-content">{{isEmpty ajlcStatus}}</td>
+            <td class="report-content">{{isEmpty trialProcedure}}</td>
+        </tr>
+        <tr>
+            <td >案由</td>
+            <td >案号</td>
+            <td >诉讼标的</td>
+            <td >当事人</td>
+        </tr>
+        <tr>
+            <td class="report-content">{{isEmpty caseCause}}</td>
+            <td class="report-content">{{isEmpty caseNo}}</td>
+            <td class="report-content">{{isEmpty actionObject}}</td>.
+            <td class="report-content">{{isEmpty pname}}</td>
+        </tr>
+        <tr>
+            <td>内容概要</td>
+            <td colspan='3' class="report-content">{{isEmpty body}}</td>
+        </tr>
+        {{/each}}
+        {{else}}
+        <tr>
+            <td  style="width:120px;">1</td>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

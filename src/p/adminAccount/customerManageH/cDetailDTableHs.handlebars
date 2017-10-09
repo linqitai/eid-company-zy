@@ -1,0 +1,28 @@
+<div style="margin-top:30px;"></div>
+<table class="table table-border table-bordered table-hover" >
+<thead class="text-c">
+  <tr>
+    <th>充值金额</th>
+    <th>赠送金额</th>
+    <th>充值时间</th>
+    <th>操作人</th>
+  </tr>
+</thead>
+<tbody class="text-c">
+{{#if this}}
+{{#each this}}
+    <tr>
+      <td>{{formatMoney rechargeAmount}}</td>
+      <td>{{ formatMoney giftAmount}}</td>
+      <td>{{formatDateFull created}}</td>
+      <td>{{operater}}</td>
+    </tr>
+{{/each}}
+{{else}}
+    <tr>
+        <td class="text-c" colspan="6">查无数据</td>
+    </tr>
+{{/if}} 
+</tbody>
+</table>
+<div class="pager"></div>

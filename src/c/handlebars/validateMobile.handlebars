@@ -1,0 +1,52 @@
+<div id="validateMobileModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content radius">
+            <div class="modalHeader text-c">
+                <div  class="modalTitle">校验手机号码</div>
+                <a class="close" data-dismiss="modal"><img src="http://static.hpbanking.com/xg/uploads/files/52db57a374280e1c013fd39d825272da-32-31.png" alt=""></a>
+            </div>
+             <div id="contentBox1">
+                <div style='margin: 30px 60px; position: relative'>
+                    <label for="mobile1">手机号码：</label>
+                    <input class="input-text w222 phone mobileNum" id="mobile" maxlength="13" placeholder="请输入银行卡绑定号码或常用号码">
+                </div>
+                <div style='margin: 30px 60px; position: relative;'>
+                    <label style="margin-left:12px;"  for="accredit">授权码：</label>
+                    <input class="input-text w222 phone" id="accredit" maxlength="13" placeholder="请输入授权码">
+                    <button id='infoSureToModalBtn' class="setMsg" style="position:absolute;right:68px;top:7px;" data-result="{{result}}" data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}"
+                        data-sex="{{sex}}" data-nation="{{nation}}" data-birthdate="{{birthdate}}" data-address="{{address}}"
+                        data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}" data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}"
+                        data-cardnum="{{cardNum}}" data-itemid="{{itemId}}" data-customerid="{{customerId}}" data-companyid="{{companyId}}"
+                        data-mobilestatus="{{mobileStatus}}">发送授权码</button>
+                </div>
+                <div class="modalFooter text-center">
+                    <div class='nextBtn confirm'>确定</div>
+                </div>
+            </div> 
+            <div id="contentBox2" class="displayNone">
+                <div class="modalBody2">
+                    <div class="info">
+                        <div class="f-18 marginCenter w260" for="">手机号码：<span id="phoneNumberS"></span></div>
+                        <div class="marginCenter w222 tip mt10">手机号码与身份匹配成功</div>
+                    </div>
+                </div>
+                <div class="modalFooter text-center">
+                    <a class="btn btn-primary h42" id="infoSureBtn2"  href="/cycle/credit/detail/detailPage.htm?encryptKey={{encryptKey}}" target="_blank">查看报告</a>
+                </div>
+            </div>
+             <div id="contentBox3"  class="displayNone">
+                <div class="modalBody3">
+                    <div class="info">
+                        <div class="f-18 marginCenter w260 text-center" for="">手机号码：<span id="phoneNumberF"></span></div>
+                        <div class="marginCenter w222 tip mt10">手机号码与身份匹配失败</div>
+                    </div>
+                </div>
+                <div class="modalFooter text-center">
+                    <a class="btn btn-danger h42" id="validateAgian2"  data-result="{{result}}" data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-sex="{{sex}}" data-nation="{{nation}}" data-birthdate="{{birthdate}}"
+                       data-address="{{address}}" data-imgUrl="{{imgUrl}}" data-issuer="{{issuer}}" data-validDate="{{validDate}}" data-faceUrl="{{faceUrl}}" data-cardnum="{{cardNum}}"
+                       data-itemid="{{itemId}}" data-customerid="{{customerId}}" data-companyid="{{companyId}}" data-mobilestatus="{{mobileStatus}}">重新查询</a>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

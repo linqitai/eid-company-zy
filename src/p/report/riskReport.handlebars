@@ -1,0 +1,120 @@
+<table class="record mt40">
+    <tbody>
+        <tr>
+            <td class="title-bold" colspan="3">身份风险汇总</td>
+        </tr>
+        <tr>
+            <td style="width:120px;">风险类型</td>
+            <td >规则</td>
+            <td >风险等级</td>
+        </tr>
+        {{#if this}}
+        <tr>
+            <td style="width:120px;">身份信息核验</td>
+            <td >被查询人三要素及人脸校验</td>
+            <td class="level-block">
+                {{#ifCond infoCheck "==" '1'}}
+                <div class="level-green"></div><div class='green-span'>绿</div>
+                {{/ifCond}} {{#ifCond infoCheck "==" '2'}}
+                <div class="level-yellow"></div><div class='yellow-span'>黄</div>
+                {{/ifCond}} {{#ifCond infoCheck "==" '3'}}
+                <div class="level-red"></div><div class='red-span'>红</div>
+                {{/ifCond}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width:120px;">公安负面信息</td>
+            <td >被查询人命中公安负面信息</td>
+            <td class="level-block">
+                {{#ifCond police "==" '1'}}
+                <div class="level-green"></div><div class='green-span'>绿</div>
+                {{/ifCond}} {{#ifCond police "==" '2'}}
+                <div class="level-yellow"></div><div class='yellow-span'>黄</div>
+                {{/ifCond}} {{#ifCond police "==" '3'}}
+                <div class="level-red"></div><div class='red-span'>红</div>
+                {{/ifCond}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width:120px;">法院涉诉信息</td>
+            <td >被查询人命中法院涉诉信息</td>
+            <td class="level-block">
+                {{#ifCond court "==" '1'}}
+                <div class="level-green"></div><div class='green-span'>绿</div>
+                {{/ifCond}} {{#ifCond court "==" '2'}}
+                <div class="level-yellow"></div><div class='yellow-span'>黄</div>
+                {{/ifCond}} {{#ifCond court "==" '3'}}
+                <div class="level-red"></div><div class='red-span'>红</div>
+                {{/ifCond}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width:120px;" rowspan="3">金融信贷信息</td>
+            <td >被查询人存在多次申请信息</td>
+            <td class="level-block">
+                {{#ifCond apply "==" '1'}}
+                <div class="level-green"></div><div class='green-span'>绿</div>
+                {{/ifCond}} {{#ifCond apply "==" '2'}}
+                <div class="level-yellow"></div><div class='yellow-span'>黄</div>
+                {{/ifCond}} {{#ifCond apply "==" '3'}}
+                <div class="level-red"></div><div class='red-span'>红</div>
+                {{/ifCond}}
+            </td>
+        </tr>
+        <tr>
+            <td >被查询人存在多头借贷信息</td>
+            <td class="level-block">
+                {{#ifCond lend "==" '1'}}
+                <div class="level-green"></div><div class='green-span'>绿</div>
+                {{/ifCond}} {{#ifCond lend "==" '2'}}
+                <div class="level-yellow"></div><div class='yellow-span'>黄</div>
+                {{/ifCond}} {{#ifCond lend "==" '3'}}
+                <div class="level-red"></div><div class='red-span'>红</div>
+                {{/ifCond}}
+            </td>
+        </tr>
+        <tr>
+            <td >被查询人命中信贷不良信息</td>
+            <td class="level-block">
+                {{#ifCond zaRisk "==" '1'}}
+                <div class="level-green"></div><div class='green-span'>绿</div>
+                {{/ifCond}} {{#ifCond zaRisk "==" '2'}}
+                <div class="level-yellow"></div><div class='yellow-span'>黄</div>
+                {{/ifCond}} {{#ifCond zaRisk "==" '3'}}
+                <div class="level-red"></div><div class='red-span'>红</div>
+                {{/ifCond}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width:120px;" rowspan="2">其他综合信息</td>
+            <td >被查询人手机号</td>
+            <td class="level-block">
+                {{#ifCond mobileInfo "==" '1'}}
+                <div class="level-green"></div><div class='green-span'>绿</div>
+                {{/ifCond}} {{#ifCond mobileInfo "==" '2'}}
+                <div class="level-yellow"></div><div class='yellow-span'>黄</div>
+                {{/ifCond}} {{#ifCond mobileInfo "==" '3'}}
+                <div class="level-red"></div><div class='red-span'>红</div>
+                {{/ifCond}}
+            </td>
+        </tr>
+         <tr>
+            <td >特殊名单核查</td>
+            <td class="level-block">
+                {{#ifCond special "==" '1'}}
+                <div class="level-green"></div><div class='green-span'>绿</div>
+                {{/ifCond}} {{#ifCond special "==" '2'}}
+                <div class="level-yellow"></div><div class='yellow-span'>黄</div>
+                {{/ifCond}} {{#ifCond special "==" '3'}}
+                <div class="level-red"></div><div class='red-span'>红</div>
+                {{/ifCond}}
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>
+    <p style="margin:20px;font-size:18px;color:#242424;line-height:30px;">说明：汇总信息由相应规则组成</p>

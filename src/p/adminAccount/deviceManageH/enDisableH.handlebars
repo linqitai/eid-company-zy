@@ -1,0 +1,22 @@
+ <div id="modal-endisable" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content radius">
+        <div class="modal-header">
+          <h5 class="modal-title">操作</h5>
+          <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+        </div>
+        <form class="form form-horizontal" id="endisableForm">
+          <input type="hidden" name="deviceId" id="deviceId" value="{{deviceId}}">
+          <input type="hidden" name="forbidden" id="forbidden" value="{{forbidden}}">
+          <div class="modal-body">
+              是否{{optionText}}MAC地址为 <span>{{deviceMac}}</span> 的设备？
+          </div>
+          <div class="modal-footer">
+            <input class="btn btn-primary" type="submit" value="确认">
+            <!-- <button type="submit" class="btn btn-primary">确定</button> -->
+            <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

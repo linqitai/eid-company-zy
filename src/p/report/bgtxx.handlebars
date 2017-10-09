@@ -1,0 +1,51 @@
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td style="width:120px;">序号</td>
+            <td class="title-bold" colspan="5">曝光台</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}} {{#each this}}
+        <tr>
+            <td rowspan="6" style="width:120px;">{{addOne @index}}</td>
+            <td>立案时间</td>
+            <td>法院名称</td>
+            <td>案由</td>
+            <td colspan="2">当事人</td>
+        </tr>
+        <tr>
+            <td class="report-content">{{isEmpty sortTimeString}}</td>
+            <td class="report-content">{{isEmpty court}}</td>
+            <td class="report-content">{{isEmpty caseCause}}</td>
+            <td colspan="2" class="report-content">{{isEmpty pname}}</td>
+        </tr>
+         <tr>
+            <td>案号</td>
+            <td>依据</td>
+            <td>标的金额</td>
+            <td>申请人</td>
+        </tr>
+        <tr>
+            <td class="report-content">{{isEmpty caseNo}}</td>
+            <td class="report-content">{{isEmpty yiju}}</td>
+            <td class="report-content">{{isEmpty execMoney}}</td>
+            <td class="report-content">{{isEmpty proposer}}</td>
+        </tr>
+        <tr>
+            <td class="match-level">匹配度</td>
+            <td colspan='4' class="report-content">{{matching matchRatio}}</td>
+            
+        </tr>
+        <tr>
+            <td>内容概要</td>
+            <td colspan='4' class="report-content">{{isEmpty body}}</td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td style="width:120px;">1</td>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

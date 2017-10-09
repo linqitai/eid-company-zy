@@ -1,0 +1,94 @@
+{{!--
+<thead class="text-c">
+    <tr>
+        <th>客户名称</th>
+        <th>1月</th>
+        <th>2月</th>
+        <th>3月</th>
+        <th>4月</th>
+        <th>5月</th>
+        <th>6月</th>
+        <th>7月</th>
+        <th>8月</th>
+        <th>9月</th>
+        <th>10月</th>
+        <th>11月</th>
+        <th>12月</th>
+        <th>总数</th>
+    </tr>
+</thead>
+<tbody class="text-c">
+    {{#if this}} {{#each this}}
+    <tr class="text-c">
+        <td>{{companyName}}</td>
+        <td>{{jan}}</td>
+        <td>{{feb}}</td>
+        <td>{{mar}}</td>
+        <td>{{apr}}</td>
+        <td>{{may}}</td>
+        <td>{{june}}</td>
+        <td>{{july}}</td>
+        <td>{{aug}}</td>
+        <td>{{sept}}</td>
+        <td>{{oct}}</td>
+        <td>{{nov}}</td>
+        <td>{{dec}}</td>
+        <td>{{count}}</td>
+    </tr>
+    {{/each}} {{else}}
+    <tr>
+        <td class="text-c" colspan="14">查无数据</td>
+    </tr>
+    {{/if}}
+</tbody>--}}
+<a style="float:right;margin:0 26px 20px 0;height:40px;width:100px;border:1px solid #ccc;text-align:center;line-height:40px;"
+    id="deleveval">excel导出</a>
+<table class="table table-border table-bordered table-hover">
+    <thead class="text-c">
+        <tr>
+            <th>店铺</th>
+            <th>查询时间</th>
+            <th>身份核验次数</th>
+            <th>EID报告次数</th>
+            <th>总金额</th>
+        </tr>
+        {{#if this}}
+        <tr class="text-c">
+            <td>总计</td>
+            <td>{{ this.obj.queryTotal.start}}至{{ this.obj.queryTotal.end}}</td>
+            <td>{{this.obj.queryTotal.identityTime}}</td>
+            <td>{{this.obj.queryTotal.reportTime}}</td>
+            <td>
+                {{this.obj.queryTotal.amount}}
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td class="text-c" colspan="8"></td>
+        </tr>
+        {{/if}}
+
+    </thead>
+    <tbody class="text-c">
+        {{#if this}} {{#each this.list}}
+        <tr class="text-c">
+            <td>
+                {{#ifCond haveSub "==" false}} {{companyName}} {{/ifCond}} {{#ifCond haveSub "==" true}} <a href="/company/count/shopDetail.htm?companyId={{companyId}}"
+                    class="detailInfor">{{companyName}}</a> {{/ifCond}}
+
+            </td>
+            <td><a href="/company/count/timeDetail.htm?companyId={{companyId}}&start={{ start}}&end={{ end}}&queryDateType={{queryDateType}}&source={{source}}&queryBranch=true"
+                    class="detailInfor">{{ start}}至{{ end}}</a></td>
+            <td class="sureinfo"><a class="detailBtn underLine" href="/company/inforService.htm?companyId={{companyId}}&_startTime={{ start}}&_endTime={{ end}}&queryDateType={{queryDateType}}&queryBranch=1">{{identityTime}}</a></td>
+            <td><a class="detailBtn underLine" href="/company/inforService.htm?companyId={{companyId}}&_startTime={{ start}}&_endTime={{ end}}&queryDateType={{queryDateType}}&businessProgress=10&queryBranch=1">{{reportTime}}</a></td>
+            <td>
+                {{amount}}
+            </td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

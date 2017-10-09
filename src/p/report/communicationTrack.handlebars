@@ -1,0 +1,30 @@
+<h2 class="text-c" style="font-size:40px;margin-top:54px;">其他综合信息</h2>
+<h3 class="text-c title-bold">手机号信息</h3>
+<table class="record mt40">
+    <tbody>
+        <tr>
+            <td>手机在网时长</td>
+            <td>手机号归属省份</td>
+            <td>手机号归属城市</td>
+            <td>手机号所属运营商</td>
+            
+        </tr>
+        {{#if this}} 
+        <tr class="text-c">
+            <td class="report-content">{{online}}</td>
+            <td class="report-content">{{province}}</td>
+            {{#if city}} <td class="report-content">{{city}}</td>
+            {{else}}
+            <td class="report-content">{{province}}</td>
+            {{/if}}
+            <td class="report-content">{{company}}</td>    
+        </tr>
+        {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>
+<br>
+<p style="margin-bottom:10px;margin-left:20px;font-size:18px;color:#242424;line-height:30px;">说明：手机信息覆盖全国范围，移动、联通、电信三家运营商数据。</p>

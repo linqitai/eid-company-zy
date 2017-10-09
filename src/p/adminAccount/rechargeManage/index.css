@@ -1,0 +1,40 @@
+/*aside*/
+.Hui-aside{
+	background-color: #333;
+    border-right: 1px solid #222;
+}
+.Hui-aside .menu_dropdown li a{
+    color: #fff;
+    border-bottom: 1px solid #222;
+}
+.Hui-aside .menu_dropdown li a:hover{
+	/*color: #148cf1;
+    background-color: #fafafa;*/
+    color: #ffffff;
+    background-color: #777;
+}
+.Hui-aside .menu_dropdown li.current a, .menu_dropdown li.current a:hover{
+	color: #ffffff;
+    background: #777;
+}
+.active{
+    display: none;
+}
+#allval{
+    display: inline-block;
+}
+#czbtn{
+    height: 48px;
+    width: 120px;
+    border:1px solid #ccc;
+    
+}
+#bgcont{
+    height: 100%;
+    width: 100%;
+    background: red;
+    opacity: 0.7;
+    position: fixed;
+    bottom:0;
+    top:0;
+}

@@ -1,0 +1,36 @@
+<h2 class="text-c mt50" style="font-size:40px;margin-bottom:40px;">法院涉诉信息</h2>
+<table class="consumeBehavior">
+    <thead class="text-c">
+        <tr>
+            <td class="title-bold" colspan="8">法院信息汇总</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}}
+        <tr>
+            <td style="width:100px;">执行公告</td>
+            <td style="width:120px;" class="report-content">{{substrNum [0].context}}</td>
+            <td style="width:100px;">失信公告</td>
+            <td style="width:120px;" class="report-content">{{substrNum [1].context}}</td>
+            <td style="width:100px;">曝光台</td>
+            <td style="width:120px;" class="report-content">{{substrNum [4].context}}</td>
+            <td style="width:100px;">法院公告</td>
+            <td style="width:120px;" class="report-content">{{substrNum [2].context}}</td>
+        </tr>
+        <tr>
+            <td style="width:100px;">开庭公告</td>
+            <td style="width:120px;" class="report-content">{{substrNum [5].context}}</td>
+            <td style="width:100px;">案件流程</td>
+            <td style="width:120px;" class="report-content">{{substrNum [6].context}}</td>
+            <td style="width:100px;">裁判文书</td>
+            <td style="width:120px;" class="report-content">{{substrNum [3].context}}</td>
+            <td style="width:100px;">网贷黑名单</td>
+            <td style="width:120px;" class="report-content">{{substrNum [7].context}}</td>
+        </tr>
+         {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+<div id="validateMobileModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content radius">
+            <div class="modalHeader text-c">
+                <div  class="modalTitle">校验手机号码</div>
+                <a class="close" data-dismiss="modal"><img src="http://static.hpbanking.com/xg/uploads/files/52db57a374280e1c013fd39d825272da-32-31.png" alt=""></a>
+            </div>
+            <div id="contentBox1">
+                <div class="modalBody ">
+                    <label class="f-18" for="mobile1">手机号码</label>
+                    <input class="input-text w222 phone ml20" id="mobile1" maxlength="11" placeholder="请输入银行卡绑定号码或常用号码">
+
+                </div>
+                <div class="modalFooter text-center">
+                    <a class="btn btn-primary h42" id="sureValidateMobileBtn" data-encryptkey="{{encryptKey}}" data-borrowername="{{borrowerName}}" data-cardnum="{{cardNum}}"
+                       data-itemid="{{itemId}}" data-customerid="{{customerId}}" data-companyid="{{companyId}}">校验手机号码</a>
+                </div>
+            </div>
+            <div id="contentBox2" class="displayNone">
+                <div class="modalBody2">
+                    <div class="info">
+                        <div class="f-18 marginCenter w222" for="">手机号码：999-9999-9999</div>
+                        <div class="marginCenter w222 tip mt10">手机号码与身份匹配成功</div>
+                    </div>
+                </div>
+                <div class="modalFooter text-center">
+                    <a class="btn btn-primary h42" id="infoSureBtn2"  href="/cycle/credit/report.htm?encryptKey={{encryptKey}}" target="_blank">查看报告</a>
+                </div>
+            </div>
+            <div id="contentBox3"  class="displayNone">
+                <div class="modalBody3">
+                    <div class="info">
+                        <div class="f-18 marginCenter w222" for="">手机号码：999-9999-9999</div>
+                        <div class="marginCenter w222 tip mt10">手机号码与身份匹配失败</div>
+                    </div>
+                </div>
+                <div class="modalFooter text-center">
+                    <a class="btn btn-danger h42 pull-left" id="validateAgian2">重新查询</a>
+                    <a class="btn btn-primary h42 pull-right">查看报告</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="navbar navbar-fixed-top">
+    <div class="container-fluid cl">
+        <img src="http://static.hpbanking.com/xg/uploads/files/040c322110142f68750ea2c701dd588f-123-39.png" alt="" id="logoUrl">
+        <a class="logo navbar-logo f-l mr-10" href="#">身份标识查询系统1111</a>
+        <span class="logo navbar-slogan f-l mr-10">v1.6</span>
+        <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+            <ul class="cl">
+                <li id="headerCompanyName">
+                    {{companyName}}&nbsp;&nbsp;
+                </li>
+                <li id="headerRealName">
+                    {{realName}}
+                </li>
+                <li class="dropDown dropDown_hover">
+                    <input type="hidden" id="companyId" value="2">
+                    <a href="#" class="dropDown_A" id="headerRoleName">{{roleName}}<i class="Hui-iconfont"></i></a>
+                    <ul class="dropDown-menu menu radius box-shadow">
+                        <li data-customerid="{{customerId}}"
+                            data-mobile="{{mobile}}"
+                            data-realname="{{realName}}">
+                            <a id="modifyInfo">修改信息</a>
+                        </li>
+                        <li><a id="modifyPassword">修改密码</a></li>
+                        <li><a id="logout" data-usertype="{{userType}}">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

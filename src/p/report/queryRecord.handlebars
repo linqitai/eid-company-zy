@@ -1,0 +1,36 @@
+<h2 class="text-c mt50" style="font-size:40px;">身份标识报告</h2>
+{{#ifCond max "==" 1}}
+<img src="http://static.hpbanking.com/xg/uploads/files/d55d5d47e32260594b5558543b390078-46-40.png" alt="" style="position: absolute; top: 22px;right:306px;">
+{{/ifCond}}
+{{#ifCond max "==" 2}}
+    <img src="http://static.hpbanking.com/xg/uploads/files/907e3511d741599680865c19fc1bd9fe-46-40.png" alt="" style="position: absolute; top: 22px;right:306px;">
+{{/ifCond}}
+
+{{#ifCond max "==" 3}}
+<img src="http://static.hpbanking.com/xg/uploads/files/9ebaec8e06d0288e0d71eaf73d23462b-46-40.png" alt="" style="position: absolute; top: 22px;right:306px;">
+
+{{/ifCond}}
+<table class="record mt40">
+    <tbody>
+        <tr>
+            <td colspan="3">身份标识报告查询汇总（近三个月）</td>
+        </tr>
+        <tr>
+            <td style="width:120px;">序号</td>
+            <td >查询机构地点</td>
+            <td >查询时间</td>
+        </tr>
+        {{#if this}} {{#each this}}
+        <tr>
+            <td style="width:120px;">{{addOne @index}}</td>
+            <td class="report-content">{{isEmpty address}}</td>
+            <td class="report-content">{{formatDateFull time}}</td>
+        </tr>
+        {{/each}}
+        {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

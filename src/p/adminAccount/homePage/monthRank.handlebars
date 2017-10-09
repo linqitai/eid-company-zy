@@ -1,0 +1,23 @@
+<table class="table table-border table-bordered">
+    <h4 class="rank-title">本月排名（前十）</h4>
+    <thead class="text-c">
+        <tr>
+            <th>店铺</th>
+            <th>数量（次）</th>
+        </tr>
+    </thead>
+    <tbody class="text-c">
+    {{#if this}}
+        {{#each this}}
+            <tr class="text-c companyName">
+               <td>{{companyName}}</td>
+               <td style="background-color: #ffffff;">{{count}}</td>
+            </tr>
+        {{/each}}
+    {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+    {{/if}}
+    </tbody>
+</table>

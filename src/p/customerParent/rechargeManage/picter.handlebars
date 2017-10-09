@@ -1,0 +1,22 @@
+
+<div class="queryBox mt-10 text" id="queryTime">
+
+    <label class="labelText w70 pull-left text-r">查询时间：</label>
+    <select id='dayOrMonth' class="input-text pull-left w120" style="height: 30px;line-height: 30px;margin-right: 10px;">
+        <option value ="0">按日</option>
+        <option value ="1">按月</option>
+    </select>
+
+    <div id="daypicker" class="">
+        <input size="16" id="startTime" class="startTime input-text pull-left w120" type="text" placeholder="开始时间" readonly>
+        <div class="pull-left" style="height: 32px;line-height: 32px;padding: 0px 10px;">--</div>
+        <input size="16" id="endTime" class="endTime input-text pull-left w120" type="text" placeholder="结束时间" readonly>
+    </div>
+    <div id="monthpicker" class="active">
+        <input size="16" id="starmonth_time" class="starmonth_time input-text pull-left w120" type="text" placeholder="开始时间" readonly>
+        <div class="pull-left" style="height: 32px;line-height: 32px;padding: 0px 10px;">--</div>
+        <input size="16" style=" width:120px;background:#ffffff;border-radius:0;height:30px;border:1px solid #ddd;" type="text" class="form-control form_datetime_2 w120 endmonth_time pull-left"
+            readonly id="endmonth_time" value="" placeholder="结束时间" data-date="2012-01" />
+    </div>
+
+</div>

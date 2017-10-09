@@ -1,0 +1,36 @@
+ <div style="float:left;margin-top:15px;">
+    <label class="labelText w70 pull-left text-r"style="float:left;margin-left:15px;">查询类型：</label>
+    <select id='jiekou' class="input-text pull-left w120" style="height: 30px;line-height: 30px;margin:2px 10px 25px 0;width:120px;float:left;">
+        <option value ="">全部</option>
+        <option value ="1">人证通</option>
+        <option value ="2">App</option>
+         <option value ="3">接口</option>
+    </select>
+ </div>
+ <div style="float:left;margin-top:15px;">
+     <label class="labelText pull-left ml-40">门店名称：</label>
+    <select class="input-text pull-left w140" id="storeNameSelect" style="width:120px;">
+        <option value="">全部</option>
+    </select>
+ </div>
+
+<div class="queryBox mt-10 text" id="queryTime" style="float:left;margin-top:12px;">
+
+    <label class="labelText w70 pull-left text-r"style="float:left;margin-left:15px;">查询时间：</label>
+    <select id='dayOrMonth' class="input-text pull-left w120" style="height: 30px;line-height: 30px;margin:2px 10px 25px 0;width:120px;float:left;">
+        <option value ="0">按日</option>
+        <option value ="1">按月</option>
+    </select>
+    <div id="daypicker" class="" style="float:left;">
+        <input size="16" id="startTime" class="startTime input-text pull-left w120"style="width:120px;" type="text" placeholder="开始时间" readonly>
+        <div class="pull-left" style="height: 32px;line-height: 32px;padding: 0px 10px;display:inline-block;">--</div>
+        <input size="16" id="endTime" class="endTime input-text pull-left w120"style="width:120px;"  type="text" placeholder="结束时间" readonly>
+    </div>
+    <div id="monthpicker" class="active"style="float:left;">
+        <input size="16" id="starmonth_time"style="width:120px;"  class="starmonth_time input-text pull-left w120" type="text" placeholder="开始时间" readonly>
+        <div class="pull-left" style="height: 32px;line-height: 32px;padding: 0px 10px;display:inline-block;">--</div>
+        <input size="16" style=" width:120px;background:#ffffff;border-radius:0;height:30px;border:1px solid #ddd;" type="text" class="form-control form_datetime_2 w120 endmonth_time pull-left"
+            readonly id="endmonth_time" value="" placeholder="结束时间"  />
+    </div>
+</div>
+

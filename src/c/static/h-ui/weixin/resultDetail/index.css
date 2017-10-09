@@ -1,0 +1,24 @@
+.content{
+    background-color: #efeff4;
+}
+.content-block{
+    background-color: #efeff4;
+}
+.contentTitle{
+    text-align: center;
+    font-size: 1rem;
+    color: #000000;
+    margin-top:0.3rem;
+}
+.item{
+    background-color: white;
+    margin-top: 0.5rem;
+    padding:0.2rem 0.6rem;
+    font-size: 0.76rem;
+}
+.mylabel{
+    color: #54b7f0;
+}
+.text{
+    margin-left: 0.5rem;
+}

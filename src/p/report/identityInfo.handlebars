@@ -1,0 +1,127 @@
+<div class="title">照片识别</div>
+<div class="pull-left identitiesBox active" id="thretop" >
+    <div class="identity identityFront pull-left">
+        <div class="pull-left w170 clearfix">
+            <div class="lineBox">
+                <span class="lightblue">姓名</span><span class="addText">{{h borrowerName}}</span>
+            </div>
+            <div class="lineBox">
+                <!--<span class="lightblue">性别</span><span class="addText">{{infoSex sex}}</span><span class="ml-15 lightblue">民族</span><span class="addText">{{nation}}</span>-->
+                <span class="lightblue">性别</span><span class="addText">{{infoSex sex}}</span><span class="ml-15 lightblue">民族</span>
+                <span class="addText">{{h nation}}</span>
+            </div>
+            <div class="lineBox">
+                <span class="lightblue">出生</span><span class="addText">{{h birthdate}}</span>
+            </div>
+            <div class="lineBox" style="height:14px;line-height:14px !important;">
+                <span class="lightblue">住址</span><span class="addText">{{h address}}</span>
+            </div>
+        </div>
+        <div class="pull-right w80 mr-10">
+            <img src="{{imgUrl}}" class="frontPic">
+        </div>
+        <div class="lineBox clearfix" style="position: absolute;bottom: 20px;">
+            <span class="lightblue">公民身份证号码</span><span class="addText" id="cardNum">{{h cardNum}}</span>
+        </div>
+
+    </div>
+    <div class="identity identityBack pull-left ml29">
+        <div class="lineBox pdl20 mt100">
+            <span class="">签发机关</span><span class="addText">{{h issuer}}</span>
+        </div>
+        <div class="lineBox pdl20">
+            <span class="">有效期限</span><span class="addText">{{transform validDate}}</span>
+        </div>
+    </div>
+    <div class="identityFrontthir pull-left ml29">
+        {{#ifCond faceUrl "==" null}}
+        <div class="currentPic pull-left ml29">
+            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+        </div>
+        <div class="identityFrontthir-bottom" style="color:white;">本人照片</div>
+        {{/ifCond}} {{#ifCond faceUrl "!=" null}}
+        <div class="currentPicNoborder pull-left ml29">
+            <img src="{{faceUrl}}" width="175">
+        </div>
+        {{/ifCond}}
+        
+    </div>
+    {{!-- <div class="currentPicNoborder pull-left ml29">
+        {{#ifCond faceUrl "==" null}}
+        <div class="currentPic pull-left ml29">
+            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+        </div>
+        {{/ifCond}} {{#ifCond faceUrl "!=" null}}
+        <div class="currentPicNoborder pull-left ml29">
+            <img src="{{faceUrl}}" width="175">
+        </div>
+        {{/ifCond}}
+    </div> --}}
+
+</div>
+<div class="pull-left identitiesBox active" id="forbot">
+    <div >
+        <div class="identityFrontthir pull-left ml29" style="width:300px;height:180px;">
+            {{#ifCond frontImage "==" null}}
+            <div class="currentPic pull-left ml29"  style="margin:16px 0 0 45px;">
+                <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+            </div>
+             <div class="identityFrontthir-bottom" style="left:75px;top:200px;color:white;">身份证正面照(拍摄)</div>
+            {{/ifCond}} {{#ifCond frontImage "!=" null}}
+            <div class="pic-bg id-pic">
+                <img src="{{frontImage}}">
+            </div>
+             <div class="identityFrontthir-bottom" style="left:90px;top:200px;color:white;">身份证正面照(拍摄)</div>
+            {{/ifCond}}
+           
+        </div>
+        <div class="identityFrontthir pull-left ml29" style="margin:16px 0 0 126px;width:300px;height:180px;">
+            {{#ifCond backImage "==" null}}
+            <div class="currentPic pull-left ml29" style="margin-left:0px;">
+                <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+            </div>
+             <div class="identityFrontthir-bottom" style="left:22px;top:184px;color:white;">身份证反面照(拍摄)</div>
+            {{/ifCond}} {{#ifCond backImage "!=" null}}
+            <div class=" id-pics" style="margin:0 0 0 -88px">
+                <img src="{{backImage}}">
+            </div>
+             <div class="identityFrontthir-bottom" style="left:-5px;top:184px;color:white;">身份证反面照(拍摄)</div>
+            {{/ifCond}}
+           
+        </div>
+    </div>
+ <div class="identityFrontthir pull-left ml29">
+        {{#ifCond faceUrl "==" null}}
+        <div class="currentPic pull-left ml29" style="margin:16px 0 0 -78px;">
+            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+        </div>
+         <div class="identityFrontthir-bottom" style="left:-20px;top:200px;color:white;">本人照片</div>
+        {{/ifCond}} {{#ifCond faceUrl "!=" null}}
+        <div class=" phonos">
+            <img src="{{faceUrl}}">
+        </div>
+         <div class="identityFrontthir-bottom" style="left:15px;top:200px;color:white;">本人照片</div>
+        {{/ifCond}}
+       
+    </div>
+    <div class="identityFrontthir pull-left ml29">
+        {{#ifCond imgUrl "==" null}}
+        <div class="currentPic pull-left ml29" style="margin:16px 0 0 8px;">
+            <img src="http://static.hpbanking.com/xg/uploads/files/fc70a224390427c58c0cd72f3b63e598-128-128.png" width="175">
+        </div>
+          <div class="identityFrontthir-bottom"style="left:60px;top:200px;color:white;">公安证件照</div>
+        {{/ifCond}} {{#ifCond imgUrl "!=" null}}
+        <div class=" phono">
+            <img src="{{imgUrl}}">
+        </div>
+          <div class="identityFrontthir-bottom"style="left:90px;top:200px;color:white;">公安证件照</div>
+        {{/ifCond}}
+      
+    </div>
+   
+
+</div>
+<div style="position:relative">
+    <img src="{{authorizUrl}}" alt="" style="height:180px;width:300px;margin:40px 0 0 30px;">
+    <div style="position:absolute;color:white;bottom:-25px;left:140px;">授权书</div>
+</div>

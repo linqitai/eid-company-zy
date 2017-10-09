@@ -1,0 +1,12 @@
+{{#if this}}
+    {{#each this}}
+        <tr>
+            <td><span class="ellipsis w500">{{message}}</span></td>
+            <td><span class="ellipsis w500">{{caseTime}}</span></td>
+        </tr>
+    {{/each}}
+{{else}}
+    <tr>
+        <td class="text-c" colspan="2">--</td>
+    </tr>
+{{/if}}

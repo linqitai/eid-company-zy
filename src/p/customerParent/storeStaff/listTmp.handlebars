@@ -1,0 +1,26 @@
+<table class="table table-border table-bordered table-hover">
+    <thead class="text-c">
+        <tr>
+            <th>姓名</th>
+            <th>手机号码</th>
+            <th>所属门店</th>
+            <th>门店地址</th>
+        </tr>
+    </thead>
+    <tbody class="text-c">
+    {{#if this}}
+        {{#each this}}
+            <tr class="text-c">
+                <td>{{realName}}</td>
+                <td>{{mobile}}</td>
+                <td>{{companyName}}</td>
+                <td>{{address}}</td>
+            </tr>
+        {{/each}}
+    {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+    {{/if}}
+    </tbody>
+</table>

@@ -1,0 +1,52 @@
+<div class="title title2 overflowHidden mt50" id="clBehavior">
+    <div class="title2Text" id="reportTitle">身份核验信息</div> <!--titleIconOrange-->
+</div>
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td colspan="4">身份信息核验</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}} {{#each this}}
+        <tr>
+            <td style="width: 400px">校验项</td>
+            <td style="width: 600px">比对结果</td>
+           
+        </tr>
+        <tr>
+            <td style="width: 400px">姓名-身份证校验</td>
+            <td style="width: 600px">{{this}}</td>
+        </tr>
+         <tr>
+            <td style="width: 400px">姓名-人脸校验</td>
+            <td style="width: 600px">信贷平台代码</td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>
+<div>
+    说明：身份核验通过人脸算法比对权威机构数据，校验得出，包含全国数据。
+</div>
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td colspan="4">手机三要素校验</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="width: 400px">校验项</td>
+            <td style="width: 600px">比对结果</td>
+           
+        </tr>
+        <tr>
+            <td style="width: 400px">姓名+身份证+手机</td>
+            <td style="width: 600px">信贷平台代码</td>
+        </tr>
+    </tbody>
+</table>

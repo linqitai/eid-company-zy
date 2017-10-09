@@ -1,0 +1,28 @@
+<h3 class="text-c title-bold">特殊名单核查</h3>
+<table class="record mt40">
+    <tbody>
+        <tr>
+            <td>序号</td>
+            <td>关系等级</td>
+            <td>命中内容</td>
+            
+        </tr>
+        {{#if this}} {{#each this}}
+        <tr class="text-c">
+            <td style="width:120px;">{{addOne @index}}</td>
+            <td class="report-content">{{flag}}</td>
+            <td class="report-content">{{content}}</td>
+        </tr> {{/each}}
+        {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>
+<br>
+<p style="margin-bottom:10px;margin-left:20px;font-size:18px;color:#242424;line-height:30px;">说明：<br>
+    1、一度关系：EID关系库中与本人有直接关联的人，一般是直系亲属、关系紧密的朋友；二度关系：EID关系库中与一度关系有直接关系的人。<br>
+    2、风险类型：高危行为、电信欠费、法院失信人、不良、短时逾期、资信不佳、失联、拒绝。高危行为：申请信息中身份证号关联多个（>3个）手机号、或手机号关联多个（>3个）身份证号；不良：逾期90天以上未还；短时逾期：逾期30/60/90天内未还；拒绝：因某些原因判定为不良而拒绝的；资信不佳：提供的申请资料未达到准入标准、信息被伪冒。<br>
+    3、客户类型：银行、非银：P2P、小贷、消费类分期、现金类分期、代偿类分期、其他（信保、信托等）。消费类分期：借贷用于购买消费品并分期偿还的业务；现金类分期：支取现金并分期偿还的业务；代偿类分期：借贷用于偿还已有借款并分期偿还的业务；非银其他：包括担保、信保等。
+</p>

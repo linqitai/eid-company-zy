@@ -1,0 +1,60 @@
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td class="title-bold" colspan="10">个人股权投资信息</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}} {{#each this}}
+        <tr class="text-c">
+            <td style="width:40%">公司名称</td>
+            <td style="width:60%" class="report-content">{{isEmpty entName}}</td>
+        </tr>
+        <tr class="text-c" >
+            <td>注册号码</td>
+            <td class="report-content">{{isEmpty regNo}}</td>
+        </tr>
+        
+        <tr class="text-c" >
+            <td>公司类型</td>
+            <td class="report-content">{{isEmpty entType}}</td>
+        </tr>
+        <tr class="text-c" >
+            <td>注册资本（万元）</td>
+            <td class="report-content">{{isEmpty regCap}}</td>
+        </tr>
+        <tr class="text-c" >
+            <td>注册币种</td>
+            <td class="report-content">{{isEmpty regCapCur}}</td>
+        </tr>
+        <tr class="text-c" >
+            <td>企业状态</td>
+            <td class="report-content">{{isEmpty entStatus}}</td>
+        </tr>
+        <tr class="text-c" >
+            <td>认缴出资额（万元）</td>
+            <td class="report-content">{{isEmpty subConam}}</td>
+        </tr>
+        <tr class="text-c" >
+            <td>认缴出资币种</td>
+            <td class="report-content">{{isEmpty currency}}</td>
+        </tr>
+        <tr class="text-c" >
+            <td>出资比例</td>
+            <td class="report-content">{{isEmpty fundedRatio}}</td>
+        </tr>
+        <tr class="text-c" >
+            <td>出资方式</td>
+            <td class="report-content">{{isEmpty conFrom}}</td>
+        </tr>
+        <tr class="text-c" >
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

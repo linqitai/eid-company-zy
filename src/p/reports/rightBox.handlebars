@@ -1,0 +1,73 @@
+{{!--<div class="spirit">
+    <img class="spirit-img" src="http://static.hpbanking.com/xg/uploads/files/88f116378888db7e8250471db55a460c-235-508.png" alt="">    {{#ifCond result "!=" 0}}
+
+    <div class="iconFail">{{infoResult result}}</div>{{/ifCond}} {{#ifCond result "==" 0}}
+    <div class="iconComplete">{{infoResult result}}</div>{{/ifCond}}
+    <a class="circle plScan" id="plScan" href="/cycle/credit/report.htm?encryptKey={{encryptKey}}&&type=plScan&&mobileStatus={{mobileStatus}}"
+        target="_blank" {{#ifCond showReport "==" 2}}onclick="return false" {{/ifCond}}>
+        <div class="text">金融信贷</div>
+        <div class="outerCircle" id="outerCPlScan">{{#ifCond showReport "==" 2}}金融信贷{{/ifCond}}{{#ifCond showReport "==" 4}}点击查看{{/ifCond}}</div>
+        <div class="popover" id="popover">
+            <div id="caseRecord"><span class="name"></span><span class="color"></span></div>
+        </div>
+    </a>
+    <a class="circle clBehavior" id="clBehavior" href="/cycle/credit/report.htm?encryptKey={{encryptKey}}&&type=clBehavior&&mobileStatus={{mobileStatus}}"
+        target="_blank" {{#ifCond showReport "==" 2}}onclick="return false" {{/ifCond}}>
+        <div class="text">身份核验</div>
+        <div class="outerCircle" id="outerCClBehavior">{{#ifCond showReport "==" 2}}身份核验{{/ifCond}}{{#ifCond showReport "=="4}}点击查看{{/ifCond}}</div>
+        <div class="popover" id="popover">
+            <div id="trdFinancialOver"><span class="name"></span><span class="color"></span></div>
+            <div id="borrowOver"><span class="name"></span><span class="color"></span></div>
+            <div id="multiplate"><span class="name"></span><span class="color"></span></div>
+            <div id="creditFraud"><span class="name"></span><span class="color"></span></div>
+            <div id="blacklist"><span class="name"></span><span class="color"></span></div>
+            <div id="lossContact"><span class="name"></span><span class="color"></span></div>
+            <div id="creditOver"><span class="name"></span><span class="color"></span></div>
+            <div id="pawnRecord"><span class="name"></span><span class="color"></span></div>
+        </div>
+    </a>
+    <a class="circle badBehavior" id="badBehavior" href="/cycle/credit/report.htm?encryptKey={{encryptKey}}&&type=badBehavior&&mobileStatus={{mobileStatus}}"
+        target="_blank" {{#ifCond showReport "==" 2}}onclick="return false" {{/ifCond}}>
+        <div class="text">公安不良</div>
+        <div class="outerCircle" id="outerCBadBehavior">{{#ifCond showReport "==" 2}}公安不良{{/ifCond}}{{#ifCond showReport "==" 4}}点击查看{{/ifCond}}</div>
+        <div class="popover" id="popover">
+            <div id="penalRecord"><span class="name"></span><span class="color"></span></div>
+            <div id="policeRecord"><span class="name"></span><span class="color"></span></div>
+            <div id="insuranceCheat"><span class="name"></span><span class="color"></span></div>
+            <div id="otherRecord"><span class="name"></span><span class="color"></span></div>
+        </div>
+    </a>
+    <a class="circle consumeBehavior" id="consumeBehavior" href="/cycle/credit/report.htm?encryptKey={{encryptKey}}&&type=consumeBehavior&&mobileStatus={{mobileStatus}}"
+        target="_blank" {{#ifCond showReport "==" 2}}onclick="return false" {{/ifCond}}>
+        <div class="text">人法涉诉</div>
+        <div class="outerCircle" id="outerCConsumeBehavior">{{#ifCond showReport "==" 2}}人法涉诉{{/ifCond}}{{#ifCond showReport "==" 4}}点击查看{{/ifCond}}</div>
+        <div class="popover" id="popover">
+            <div id="ExceptionTrade"><span class="name"></span><span class="color"></span></div>
+            <div id="cashOut"><span class="name"></span><span class="color"></span></div>
+            <div id="badCost"><span class="name"></span><span class="color"></span></div>
+        </div>
+
+    </a>
+    <a class="circle communicationTrack" id="communicationTrack" href="/cycle/credit/report.htm?encryptKey={{encryptKey}}&&type=communicationTrack&&mobileStatus={{mobileStatus}}"
+        target="_blank" {{#ifCond showReport "==" 2}}onclick="return false" {{/ifCond}}>
+        <div class="text">其他综合</div>
+        <div class="outerCircle" id="outerCCommunicationTrack">{{#ifCond showReport "==" 2}}其他综合{{/ifCond}}{{#ifCond showReport "==" 4}}点击查看{{/ifCond}}</div>
+        <div class="popover" id="popover">
+            <div id=""><span class="name">手机状态</span><span class="color fontCGreen">（正常）</span></div>
+            <div id="onlineTimeMap"><span class="name"></span><span class="color"></span></div>
+            <div id="collectionRecordsMap"><span class="name"></span><span class="color"></span></div>
+        </div>
+    </a>
+
+</div>
+<div class="flag">
+    <div class="lineMg"><span class="sCircle sRed">：表示触碰关键性风险数据，属于预警类别</span></div>
+    <div class="lineMg"><span class="sCircle sYellow"></span>：表示触碰非关键性风险数据，属于提示类别</div>
+    <div class="lineMg"><span class="sCircle sGreen"></span>：表示未触碰风险数据或未发生</div>
+    {{#ifCond showReport "==" 4}}
+    <a class="btn btn-primary h42" id="checkFullReportBtn" href="/cycle/credit/report.htm?encryptKey={{encryptKey}}&&type=fullReport&&mobileStatus={{mobileStatus}}"
+        target="_blank">查看完整报告</a> {{/ifCond}} {{#ifCond showReport "==" 2}}
+    <a class="btn btn-primary h42 displayNone" id="checkFullReportBtn" href="/cycle/credit/report.htm?encryptKey={{encryptKey}}&&type=fullReport&&mobileStatus={{mobileStatus}}"
+        target="_blank">查看完整报告</a> {{/ifCond}}
+
+</div>--}}

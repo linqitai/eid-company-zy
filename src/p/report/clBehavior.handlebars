@@ -1,0 +1,53 @@
+<div class="title overflowHidden mt50" id="clBehavior">
+    <div class="text-c" id="reportTitle" style="font-size:40px;">身份核验信息</div> <!--titleIconOrange-->
+</div>
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td class="title-bold" colspan="4">身份信息核验</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}}
+        <tr>
+            <td style="width: 400px">校验项</td>
+            <td style="width: 600px">比对结果</td>
+           
+        </tr>
+        <tr>
+            <td style="width: 400px">姓名-身份证校验</td>
+            <td style="width: 600px" class="report-content">{{idAndName}}</td>
+        </tr>
+         <tr>
+            <td style="width: 400px">身份证-人脸校验</td>
+            <td style="width: 600px" class="report-content">{{idAndFace}}</td>
+        </tr>
+        {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>
+
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td class="title-bold" colspan="4">手机三要素校验</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="width: 400px">校验项</td>
+            <td style="width: 600px">比对结果</td>
+           
+        </tr>
+        <tr>
+            <td style="width: 400px">姓名+身份证+手机</td>
+            <td style="width: 600px" class="report-content">{{three}}</td>
+        </tr>
+    </tbody>
+</table>
+<div style="margin:20px;font-size:18px;color:#242424; line-height:30px;">
+    说明：身份核验通过人脸算法比对权威机构数据，校验得出，包含全国数据。
+</div>

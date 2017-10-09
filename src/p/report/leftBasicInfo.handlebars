@@ -1,0 +1,39 @@
+<div class="box1LeftLines box1Title">比对结果</div>
+<div class="box1LeftLines2">
+    
+    {{#ifCond result "==" 0}}<div class="line1 iconComplete">{{infoResult result flowStatus}}</div>{{/ifCond}}
+    {{#ifCond result "!=" 0}}<div class="line1 iconFail">{{infoResult result flowStatus}}</div>{{/ifCond}}
+    {{#ifCond mobileStatus "==" 0}}
+        <div class="line1 iconNotV">{{validateStatus mobileStatus}}</div>
+        <div class="f14">（温馨提示：由于手机号码未校验，导致该报告不完整。）</div>
+    {{/ifCond}}
+    {{#ifCond mobileStatus "==" 1}}
+        <div class="line1 iconVMobileError">{{validateStatus mobileStatus}}</div>
+        <div class="f14">（温馨提示：由于手机号码匹配不成功，导致该报告不完整。）</div>
+    {{/ifCond}}
+    {{#ifCond mobileStatus "==" 2}}<div class="line1 iconVMobileSuccess">{{validateStatus mobileStatus}}</div>{{/ifCond}}
+
+</div>
+<div class="box1LeftLines box1Title">基本信息</div>
+<div class="box1LeftLines2">
+    <div class="line1">姓<span class="ls">&nbsp</span>名：{{h borrowerName}}</div>
+    <div class="line1">姓<span class="ls">&nbsp</span>别：{{infoSex sex}}</div>
+    <div class="line1">年<span class="ls">&nbsp</span>龄：{{countAge birthdate}}</div>
+    <div class="line1">出<span class="ls">&nbsp</span>生：{{h birthdate}}</div>
+    {{!-- <div class="line1">民<span class="ls">&nbsp</span>族：{{h nation}}</div> --}}
+    <div class="line1">手机号：{{h mobile}}</div>
+    {{!-- <div class="">
+        <div class="pull-left">住<span class="ls">&nbsp</span>址：</div>
+        <div class="pull-left" style="width: 210px;">{{h address}}</div>
+    </div> --}}
+</div>
+<div class="box1LeftLines2">
+    <div class="line1">证件类型：身份证</div>
+    <div class="line1">身份证号：{{h cardNum}}</div>
+    {{!-- <div class="line1">签发机关：{{h issuer}}</div> --}}
+    <div class="line1">有效期限：{{h validDate}}</div>
+</div>
+<div class="box1LeftLinesLast">
+    <div class="line1">查询网点：{{h companyName}}</div>
+    <div class="line1">查询时间：{{formatDate created}}</div>
+</div>

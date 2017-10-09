@@ -1,0 +1,47 @@
+ {{!--
+<div class="queryBox mt-10 text" id="queryTime">
+
+    <label class="labelText w70 pull-left text-r" style="float:left;">查询时间：</label>
+    <select id='dayOrMonth' class="input-text pull-left w120" style="height: 30px;line-height: 30px;margin-right: 10px;width:120px;float:left;">
+        <option value ="0">按日</option>
+        <option value ="1">按月</option>
+    </select>
+
+    <div id="daypicker" style="float:left;">
+        <input size="16" id="startTime" style="height: 30px;line-height: 30px;margin-right: 10px;width:120px;float:left;" class="startTime input-text pull-left w120"
+            type="text" placeholder="开始时间" readonly>
+        <div class="pull-left" style="height: 32px;line-height: 32px;padding: 0px 10px;float:left;">--</div>
+        <input size="16" id="endTime" style="height: 30px;line-height: 30px;margin-right: 10px;width:120px;" class="endTime input-text pull-left w120"
+            type="text" placeholder="结束时间" readonly>
+    </div>
+    <div id="monthpicker" class="active" style="float:left;">
+        <input size="16" id="starmonth_time" style="height: 30px;float:left;line-height: 30px;float:left;margin-right: 10px;width:120px;"
+            class="starmonth_time input-text pull-left w120" type="text" placeholder="开始时间" readonly>
+        <div class="pull-left" style="height: 32px;line-height: 32px;padding: 0px 10px;float:left;">--</div>
+        <input size="16" style="float:left; width:120px;background:#ffffff;border-radius:0;height:30px;border:1px solid #ddd;" type="text"
+            class="form-control form_datetime_2 w120 endmonth_time pull-left" readonly id="endmonth_time" value="" placeholder="结束时间"
+            data-date="2012-01" />
+    </div>
+
+</div>--}}
+
+<div style="float:right;width:350px;">
+    <div style="height:20px;width:350px;">
+        <form id="dataCount_searchForm">
+            <div class="col-xs-8">
+                <label class="form-label col-xs-4 col-sm-4">客户名称：</label>
+                <div class="formControls col-xs-8 col-sm-8">
+                    <input type="text" class="input-text" placeholder="请输入客户名称" name="companyName" id="searchText">
+                </div>
+            </div>
+            <div class="btn btn-default col-xs-2" id="search_button" style="margin-right:50px;">搜索</div>
+            {{!--<input class="btn btn-default col-xs-2" type="submit" id="search_button" value="搜索">--}}
+        </form>
+    </div>
+
+    <br> {{#if this}}
+    <div class="queryBox text" id="statusSelect" style="margin-bottom:50px;">
+        已累计充值{{formatMoney rechargeTotalAmount}}元，赠送{{formatMoney giftTotalAmount}}元，共计{{formatMoney totalAmount}}元
+    </div>
+    {{else}} {{/if}}
+</div>

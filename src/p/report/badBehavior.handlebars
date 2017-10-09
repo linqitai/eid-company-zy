@@ -1,0 +1,25 @@
+<h2 class="text-c mt50" style="font-size:40px;">公安负面信息</h2>
+<table class="record mt40">
+    <thead class="text-c">
+        <tr>
+            <td style="width:120px;">序号</td>
+            <td >案件来源</td>
+            <td >案件类别</td>
+            <td >案发区间</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if this}} {{#each this}}
+        <tr>
+            <td style="width:120px;">{{addOne @index}}</td>
+            <td class="report-content">{{isEmpty caseSource}}</td>
+            <td class="report-content">{{isEmpty caseType}}</td>
+            <td class="report-content">{{isEmpty caseTime}}</td>
+        </tr>
+        {{/each}} {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

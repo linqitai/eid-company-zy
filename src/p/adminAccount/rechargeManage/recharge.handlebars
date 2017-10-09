@@ -1,0 +1,104 @@
+<div id="modal-addCustomer" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content radius">
+      <div class="modal-header">
+        <h5 class="modal-title">充值</h5>
+        <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();" id="xx">×</a>
+      </div>
+      <form class="form form-horizontal" id="addCustomerForm">
+        <div class="modal-body">
+          <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3">客户名称：</label>
+            <div class="formControls col-xs-8 col-sm-8">
+              <select name="companyId" id="typeId">
+                    <option value="">请选择客户名称</option>
+                  </select>
+              <div class="infomeg active" style="color:red;">充值金额不能为空，请输入</div>
+            </div>
+
+          </div>
+          <div class="row cl" style="position:relative;">
+            <label class="form-label col-xs-4 col-sm-3">充值金额：</label>
+            <div class="formControls col-xs-8 col-sm-8">
+              <input type="tel" class="input-text" autocomplete="off" placeholder="充值金额" name="rechargeAmount" id="rechargeval">
+              <div style="position:absolute;right:2px;top:5px;">元</div>
+              <div class="infomegs active" style="color:red;">充值金额不能为空，请输入</div>
+            </div>
+
+          </div>
+          <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3">赠送金额：</label>
+            <div class="formControls col-xs-3 col-sm-3">
+              <select name="" id="typeId1">
+                    <option value="1">不赠送</option>
+                    <option value="2">赠送</option>
+                  </select>
+            </div>
+            <div class="formControls col-xs-3 col-sm-4 active" id="zsvals" style="margin-left:-15px;">
+              <input type="text" class="input-text" autocomplete="off" placeholder="赠送金额" name="giftAmount" id="realName">
+              <div style="position:absolute;right:2px;top:5px;">元</div>
+            </div>
+          </div>
+          <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3" style="margin-top:0px;">合计金额：</label>
+            <div class="formControls skin-minimal" id="allval" style="display:inline-block">
+              0.00
+            </div>
+            <span> 元</span>
+            <input type="hidden" name="totalAmount" id="typeName" value="">
+          </div>
+        </div>
+        <div style="display:flex;justify-content: center;" id="addCustomer4">
+          <div id="addCustomer5" style="height:40px;width:120px;border:1px solid #ccc;text-align:center;line-height:40px;margin-bottom:40px;">充值</div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-dialogs active">
+    <div class="modal-content radius">
+      <div class="modal-header">
+        <h5 class="modal-title">确认充值</h5>
+        <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+      </div>
+      <h4 class="modal-title" style="text-align:center;">确认以下信息无误</h4>
+      <div style="display: flex;justify-content: center;">
+        <div style="width:200px;height:120px;">
+          <div class="row cl" style="margin-left: 30px;;margin-bottom:5px;">
+            <label class="">客户名称：</label>
+            <span id="customer"></span>
+            <span>公司</span>
+          </div>
+          <div class="row cl" style="margin-left: 30px;;margin-bottom:5px;">
+            <label class="">充值金额：</label>
+            <span id="surerv"></span>
+            <span>元</span>
+          </div>
+          <div class="row cl" style="margin-left: 30px;;margin-bottom:5px;">
+            <label class="">赠送金额：</label>
+            <span id="suzsv"></span>
+            <span>元</span>
+          </div>
+          <div class="row cl"  style="margin-left: 30px;;margin-bottom:5px;">
+            <label class="">合计金额：</label>
+            <span id="surall"></span>
+            <span>元</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        {{!--<input class="btn btn-primary" type="submit" value="充值">--}}
+        <button type="submit" id="aaaa" class="btn btn-primary">确定</button> {{!-- <button class="btn" data-dismiss="modal"
+          aria-hidden="true">取消</button> --}}
+        <button class="btn" id="bbbb">取消</button>
+      </div>
+    </div>
+  </div>
+
+  {{!--
+  <div id="modal-addCustomer1" class="modal fade active" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+    style="position:fixed;z-index:10000;top:150px;">
+
+  </div>
+</div>--}}

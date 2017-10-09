@@ -1,0 +1,21 @@
+ <div id="modal-creditOption" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content radius">
+      <div class="modal-header">
+        <h5 class="modal-title">设置确认</h5>
+        <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+      </div>
+      <form class="form form-horizontal" id="creditOptionForm">
+        <input type="hidden" name="encryptKey" id="encryptKey" value="{{encryptKey}}">
+        <input type="hidden" name="status" id="status" value="{{status}}">
+        <div class="modal-body">
+            客户：{{borrowerName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确认{{optionText}}？
+        </div>
+        <div class="modal-footer">
+          <input class="btn btn-primary" type="submit" value="确认">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

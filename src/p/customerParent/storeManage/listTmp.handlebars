@@ -1,0 +1,28 @@
+<table class="table table-border table-bordered table-hover">
+    <thead class="text-c">
+        <tr>
+            <th>门店名称</th>
+            <th>地址</th>
+            <th>负责人</th>
+            <th>手机号码</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody class="text-c">
+    {{#if this}}
+        {{#each this}}
+            <tr class="text-c">
+                <td>{{companyName}}</td>
+                <td>{{address}}</td>
+                <td>{{linkMan}}</td>
+                <td>{{phone}}</td>
+                <td data-companyid="{{companyId}}" data-linkman="{{linkMan}}"><a class="reset">重置密码</a><span class="pipe">|</span><a class="edit">编辑</a><span class="pipe">|</span><a class="delete">删除</a></td>
+            </tr>
+        {{/each}}
+    {{else}}
+        <tr>
+            <td class="text-c" colspan="8">查无数据</td>
+        </tr>
+    {{/if}}
+    </tbody>
+</table>

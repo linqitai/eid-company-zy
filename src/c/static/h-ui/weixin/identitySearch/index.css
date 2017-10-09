@@ -1,0 +1,69 @@
+.content{
+    padding:0.8rem 0.7rem;
+}
+.tipText{
+    font-size: 0.65rem;
+    padding:0.5rem 1rem 0.5rem 0rem;
+    display: block;
+    color: #c7c7c7;
+}
+.payValueBox{
+    padding:0.1rem 0.9rem 2rem 0.9rem;
+}
+.payValueBox .textFront{
+    font-size: 0.8rem;
+    color: #646464;
+}
+.payValueBox .payValue{
+    color: #ff0000;
+    font-size: 0.9rem;
+}
+.myRecord{
+    margin-top: 0.5rem;
+    padding: 0em 0em 0.5em 0.5em;
+    text-decoration: underline;
+    color:#999999;
+}
+.checkBox{
+    position: relative;
+    display: block;
+    margin-top: 1.4rem;
+    margin-bottom: 0.8rem;
+    line-height: 0.95rem;
+    height: 0.95rem;
+    color: #999999;
+    font-size: 0.74rem;
+    text-indent: 1.2rem;
+    text-decoration: underline;
+}
+.checkIcon{
+    position: absolute;
+    display: inline-block;
+    background: url("http://static.hpbanking.com/xg/uploads/files/a7541fd5915e83fffb9a013ae754aa6a-38-77.png");
+    background-size: 100%;
+    width: 0.95rem;
+    height: 0.95rem;
+    top: 0rem;
+    left: 0rem;
+}
+.checkIcon.active{
+    background-position: 0 -19px;
+}
+.authorization{
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.25rem;
+    background: #12b7f5;
+    color: #ffffff;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.3rem;
+    text-align: center;
+    border:0.1rem solid #e1f1f4;
+    margin-bottom: 1rem;
+}
+.direction{
+    margin-left: 48%;
+    display: block;
+    color: #bfbfbf;
+}

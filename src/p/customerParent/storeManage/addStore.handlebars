@@ -1,0 +1,53 @@
+<div id="modal-addStore" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content radius">
+            <div class="modal-header">
+                <h3 class="modal-title ml20">新增门店</h3>
+                <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+            </div>
+            <form class="form form-horizontal" id="addStoreForm">
+                <div class="modal-body">
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3 text-l">门店名称：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <input type="text" class="input-text w320" placeholder="请输入门店名称" id="companyName" name="companyName">
+                            <input type="hidden" class="input-text w320" id="typeId" name="typeId" value="1">
+                            <input type="hidden" class="input-text w320" id="typeName" name="typeName" value="1">
+                            <input type="hidden" class="input-text w320" id="companyId" name="companyId">
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">门店地址：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <div id="province_city"></div>
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">详细地址：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <input type="text" class="input-text w320" placeholder="请输入详细地址" name="address" id="address">
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">负责人：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <input type="text" class="input-text w320" autocomplete="off" placeholder="请输入负责人姓名" id="linkMan" name="linkMan">
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">手机号码：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <input type="text" class="input-text w320" autocomplete="off" placeholder="请输入负责人手机号码做为用户名与初始密码" maxlength="11" name="phone" id="phone">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <input class="btn btn-primary" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"> -->
+                    <!--<a class="btn btn-primary" id="sureAddStoreBtn">确定</a>-->
+                    <input class="btn btn-primary" type="submit" id="sureAddBtn" value="确定">
+                    <a class="btn mr23" data-dismiss="modal" aria-hidden="true">关闭</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
